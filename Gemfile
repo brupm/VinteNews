@@ -5,6 +5,8 @@ gem 'heroku'
 gem 'haml'
 gem 'sqlite3'
 gem 'mysql'
+gem 'hoptoad_notifier'
+gem 'sass'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"

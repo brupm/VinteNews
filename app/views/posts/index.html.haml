@@ -1,0 +1,38 @@
+#thetable
+  .post
+    %h3
+      1.
+      %a{:href => "#"} ↑
+      %strong
+        %a{:href => "#"} Título do post publicado aqui
+      (site.com)
+    %p.mini
+      \#pointcount# pontos — submetido por
+      %a{:href => "#"} #usuario#
+      há #timecount# #time# atrás —
+      %a{:href => "#"} #commentcount# comentários
+  .post
+    %h3
+      2.
+      %a{:href => "#"} ↑
+      %strong
+        %a{:href => "specs.html"} Specs
+      (site.com)
+    %p.mini
+      2 pontos — submetido por
+      %a{:href => "#"} luciano
+      há 1 hora atrás —
+      %a{:href => "#"} 0 comentários
+  %h3
+    %a{:href => "#"} MORE
+    %br/
+    %br/
+  #footer
+  %p
+    %a{:href => "sobre.html"} Sobre este site
+    —
+    = succeed "\342\200\224" do
+      %a{:href => "#"} RSS
+    %a{:href => "#"} Busca
+    —
+    %a{:href => "#"} Twitter
