@@ -1,13 +1,20 @@
 %p
   %span{:style => "float:left;"}
     = link_to "VintenNews", root_path 
-  —
+  -
   %a{:href => "#"} Mais recentes
-  —
+  -
   %a{:href => "#"} Perguntas
-  —
+  -
   %a{:href => "#"} Empregos
-  —
-  %a{:href => "#"} ENVIAR NOTÍCIA
+  - 
+  %a{:href => "#"} ENVIAR NOTICIA
   %span{:style => "float:right;"}
-    %a{:href => "login.html"} Login
+    - if current_user
+      = link_to "Edit Profile", edit_user_path(:current)
+      |
+      = link_to "Logout", logout_path 
+    - else
+      = link_to "Register", register_path 
+      |
+      = link_to "Login", login_path

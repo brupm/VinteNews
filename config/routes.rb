@@ -10,9 +10,26 @@ Vintenews::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
+  match 'login' => 'user_sessions#new'
+  match 'logout' => 'user_sessions#destroy'
+  match 'register' => 'users#new'
+
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  resources :users
+  resource :user_session
+  resources :posts
+  resources :comments
+  
+  # resources :users do 
+  #   resources :posts
+  # end
+  # 
+  # resources :posts do 
+  #   resources :comments
+  # end
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do

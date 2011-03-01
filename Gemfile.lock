@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ZenTest (4.5.0)
     abstract (1.0.0)
     actionmailer (3.0.5)
       actionpack (= 3.0.5)
@@ -30,6 +31,10 @@ GEM
     activesupport (3.0.5)
     archive-tar-minitar (0.5.2)
     arel (2.0.9)
+    authlogic (2.1.6)
+      activesupport
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
     builder (2.1.2)
     columnize (0.3.2)
     configuration (1.2.0)
@@ -116,6 +121,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic
+  autotest
   haml
   heroku
   hoptoad_notifier
