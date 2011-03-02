@@ -1,0 +1,24 @@
+= form_for @user do |f|
+  
+  - if @user.errors.any?
+    %ul
+      - @user.errors.full_messages.each do |msg|
+        %li= msg        
+        
+  %div
+    = f.label :username
+    %br
+    = f.text_field :login
+  %div
+    = f.label :email
+    %br
+    = f.text_field :email
+  %div
+    = f.label :password
+    %br
+    = f.password_field :password
+  /%div
+  /  = f.label :password_confirmation
+  /  = f.password_field :password_confirmation
+  .actions
+    = f.submit 'Register'
