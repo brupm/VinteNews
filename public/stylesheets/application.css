@@ -18,7 +18,8 @@ a {
 
 h1, h2 {
   font-family: Helvetica, sans-serif;
-  margin: 20px 0 5px 0; }
+  margin: 20px 0;
+  font-weight: lighter; }
 
 h3 {
   font-size: 1em;
@@ -51,14 +52,15 @@ pre {
   #header p {
     margin: 0; }
 
-#thetable {
-  margin: 20px; }
-  #thetable a:visited {
-    color: #666666; }
-  #thetable p {
-    font-size: 0.85em;
-    margin-top: 0;
-    margin-bottom: 0; }
+#main-content {
+  padding: 10px 20px; }
+
+#thetable a:visited {
+  color: #666666; }
+#thetable p {
+  font-size: 0.85em;
+  margin-top: 0;
+  margin-bottom: 0; }
 
 #footer {
   text-align: center;

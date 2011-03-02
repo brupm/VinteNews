@@ -1,14 +1,13 @@
 %p
-  %span{:style => "float:left;"}
-    = link_to "VintenNews", root_path 
-  -
-  %a{:href => "#"} Mais recentes
-  -
-  %a{:href => "#"} Perguntas
-  -
-  %a{:href => "#"} Empregos
-  - 
-  %a{:href => "#"} ENVIAR NOTICIA
+  %a
+    = link_to "Mais Recentes", root_path 
+  |
+  %a
+    = link_to "Perguntas", root_path
+  |
+  %a
+    %strong 
+      = link_to "ENVIAR NOTÍCIA", root_path
   %span{:style => "float:right;"}
     - if current_user
       = link_to "Edit Profile", edit_user_path(:current)

@@ -17,8 +17,5 @@
     = f.label :password
     %br
     = f.password_field :password
-  /%div
-  /  = f.label :password_confirmation
-  /  = f.password_field :password_confirmation
-  .actions
-    = f.submit 'Register'
+  %div  
+    = f.submit 'Register', :disable_with => "Please wait..."

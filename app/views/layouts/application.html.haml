@@ -11,4 +11,12 @@
       #content
         #header
           = render :partial => "layouts/header"
-        = yield 
+        #main-content
+          = yield 
+        #footer
+          %p
+            = link_to "Sobre este site", about_url 
+            |
+            = link_to "Twitter", "http://twitter.com/vintenews"
+            |
+            = link_to "RSS", "#"

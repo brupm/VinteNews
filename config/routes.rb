@@ -13,6 +13,7 @@ Vintenews::Application.routes.draw do
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   match 'register' => 'users#new'
+  match 'about' => 'pages#about'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
