@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
     c.require_password_confirmation = false # There is no login field, so don't validate it
   end
+  
+  has_many :posts
+  has_many :comments
 end
