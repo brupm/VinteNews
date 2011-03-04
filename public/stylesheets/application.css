@@ -9,8 +9,7 @@ body {
 
 a {
   color: #3e4095;
-  text-decoration: none;
-  padding: 2px; }
+  text-decoration: none; }
   a:hover {
     background: #00a859;
     color: white;
@@ -28,6 +27,10 @@ h3 {
 
 p {
   margin: 0 0 10px 0; }
+
+form input, form textarea {
+  padding: 5px;
+  margin-bottom: 10px; }
 
 #thetable p {
   margin: 0; }
@@ -74,4 +77,5 @@ pre {
   clear: both; }
 
 .mini {
-  margin-left: 38px; }
+  padding-left: 38px;
+  color: #666666; }

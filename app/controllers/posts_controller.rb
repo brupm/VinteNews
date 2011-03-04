@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  before_filter :require_user, :except => [:index, :show]
   before_filter :find_post, :only => [:show, :edit, :update]
 
-  def index 
-    @posts = Post.all
+  def index
+    @posts = User.find_by_login(params[:user_id]).posts rescue Post.active
   end
   
   def new

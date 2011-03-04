@@ -15,7 +15,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+        format.html { redirect_back_or_default(root_path) 
+          flash[:notice] = 'User was successfully created.'
+        }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -24,16 +26,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = current_user
-  end
-
   def update
     @user = current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+        format.html { redirect_back_or_default(root_path) 
+          flash[:notice] = 'User was successfully updated.'
+        }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -41,9 +41,13 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  def show
+    @user = User.find_by_login(params[:id])
+  end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = current_user
     @user.destroy
 
     respond_to do |format|

@@ -29,12 +29,12 @@ Date.prototype.toRelativeTime = function() {
  var units       = null;
  var conversions = {
    millisecond: 1, // ms    -> ms
-   second: 1000,   // ms    -> sec
-   minute: 60,     // sec   -> min
-   hour:   60,     // min   -> hour
-   day:    24,     // hour  -> day
-   month:  30,     // day   -> month (roughly)
-   year:   12      // month -> year
+   segundo: 1000,   // ms    -> sec
+   minuto: 60,     // sec   -> min
+   hora:   60,     // min   -> hour
+   dia:    24,     // hour  -> day
+   mes:  30,     // day   -> month (roughly)
+   ano:   12      // month -> year
  };
 
  for(var key in conversions) {
@@ -49,7 +49,7 @@ Date.prototype.toRelativeTime = function() {
  // pluralize a unit when the difference is greater than 1.
  delta = Math.floor(delta);
  if(delta !== 1) { units += "s"; }
- return [delta, units, "ago"].join(" ");
+ return [delta, units].join(" ");
 };
 
 /*

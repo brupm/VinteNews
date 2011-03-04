@@ -1,0 +1,14 @@
+%h1
+  = @user.login
+%p
+  = "Created: #{@user.created_at.to_formatted_s(:short_ordinal)}"
+  %br
+  = "Login Count: #{@user.login_count}"
+  %br
+  = link_to "Posts (#{@user.posts.count})", user_posts_path(@user)
+  %br
+  = link_to "Comments (#{@user.comments.count})", user_comments_path(@user)
+
+%br   
+- if @user == current_user
+  = render 'edit_form'

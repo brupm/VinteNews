@@ -7,9 +7,14 @@ class User < ActiveRecord::Base
     c.require_password_confirmation = false
   end
   
+  def to_param
+    login
+  end
+  
   has_many :posts
   has_many :comments
 end
+
 # == Schema Information
 #
 # Table name: users

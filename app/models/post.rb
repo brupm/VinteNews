@@ -4,8 +4,13 @@ class Post < ActiveRecord::Base
   
   validates_presence_of :title
   validates_length_of :title, :within => 5..100
-  validates_presence_of :url, :allow_blank => true
-  validates_presence_of :body, :allow_blank => true
+  validates_length_of :url, :within => 5...1000, :allow_blank => true
+  validates_length_of :body, :within => 10...10000, :allow_blank => true  
+  validates_uniqueness_of :title, :on => :create, :message => "must be unique"
+  
+  
+  scope :active, lambda { where("posts.status IS NULL") }
+  
 end
 # == Schema Information
 #

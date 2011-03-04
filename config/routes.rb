@@ -18,10 +18,15 @@ Vintenews::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :users
   resource :user_session
-  resources :posts
   resources :comments
+  resources :posts 
+    
+  resources :users do
+    resources :posts 
+    resources :comments
+  end
+
   
   # resources :users do 
   #   resources :posts
