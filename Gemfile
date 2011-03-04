@@ -8,9 +8,11 @@ gem 'mysql'
 gem 'hoptoad_notifier'
 gem 'sass'
 gem 'autotest'
-#gem 'inherited_resources', '~> 1.2.1'
-#gem 'responders'
 gem 'authlogic'
+
+group :development do 
+  gem 'annotate'
+end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"

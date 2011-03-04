@@ -1,0 +1,21 @@
+= form_for @post do |f|
+  
+  - if @post.errors.any?
+    %ul
+      - @post.errors.full_messages.each do |msg|
+        %li= msg        
+        
+  %div
+    = f.label :title
+    %br
+    = f.text_field :title
+  %div
+    = f.label :url
+    %br
+    = f.text_field :url
+  %div
+    = f.label :body
+    %br
+    = f.text_area :body
+  %div  
+    = f.submit 'Submit', :disable_with => "Please wait..."

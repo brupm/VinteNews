@@ -1,15 +1,12 @@
 %a{:href => "/"}
-  %img{:src => "/images/logo.png", :height => "20px", :style => "float: left; padding-right: 6px;"}
+  %img{:src => "/images/logo-mini.png", :style => "float: left; padding-right: 6px;"}
 %p
-  %a
-    = link_to "Mais Recentes", root_path 
+  = link_to "Mais Recentes", root_path 
   |
-  %a
-    = link_to "Perguntas", root_path
+  = link_to "Perguntas", root_path
   |
-  %a
-    %strong 
-      = link_to "ENVIAR NOTÍCIA", root_path
+  %strong 
+    = link_to "ENVIAR NOTÍCIA", root_path
   %span{:style => "float:right;"}
     - if current_user
       = link_to "Edit Profile", edit_user_path(:current)

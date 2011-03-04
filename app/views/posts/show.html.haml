@@ -1,0 +1,8 @@
+%h1
+  = @post.title
+  %br 
+  = link_to @post.url, @post.url
+
+  - if @post.body
+    %p
+      = @post.body

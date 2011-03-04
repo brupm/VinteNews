@@ -29,6 +29,7 @@ GEM
       activemodel (= 3.0.5)
       activesupport (= 3.0.5)
     activesupport (3.0.5)
+    annotate (2.4.0)
     archive-tar-minitar (0.5.2)
     arel (2.0.9)
     authlogic (2.1.6)
@@ -121,6 +122,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   authlogic
   autotest
   haml

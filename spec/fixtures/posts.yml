@@ -1,12 +1,7 @@
-require 'spec_helper'
-
-describe Post do 
-  fixtures :posts
-  
-  it "should have a title"
-  
-  it "should have a url"
-end
+regular_post:
+  user_id: 1
+  title: "Best Post Title"
+  url: "http://www.hackernews.com"
 # == Schema Information
 #
 # Table name: posts
