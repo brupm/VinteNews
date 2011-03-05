@@ -8,7 +8,7 @@
   %p.mini
     submetido por
     = link_to post.user.login, user_path(post.user)
-    há 
+    há
     %span.relative_post_date
       = post.created_at.to_formatted_s(:rfc822)
     atrás —

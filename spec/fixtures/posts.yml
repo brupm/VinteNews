@@ -1,12 +1,12 @@
 url_post:
   id: 1
-  user_id: bruno
+  user_id: 1
   title: "Best Post Title"
   url: "http://www.hackernews.com"
-  
+
 text_post:
   id: 2
-  user_id: bruno
+  user_id: 1
   title: "Best Post Title"
   body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
 
