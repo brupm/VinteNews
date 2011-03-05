@@ -2,6 +2,10 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'capybara/rails'
+require 'capybara/dsl'
+require 'authlogic/test_case'
+require 'integration_spec_helper'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -24,4 +28,17 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  
+  config.include Capybara, :type => :integration
+  config.include IntegrationSpecHelper #, :type => :integration
+  
+  Capybara.default_wait_time = 5
+  Capybara.ignore_hidden_elements = false
+  
+  config.after :each do
+    Capybara.use_default_driver
+    Capybara.default_host = "www.example.com"
+    Capybara.reset_sessions!
+  end
 end
+

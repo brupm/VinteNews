@@ -37,11 +37,26 @@ GEM
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
     builder (2.1.2)
+    capybara (0.4.1.2)
+      celerity (>= 0.7.9)
+      culerity (>= 0.2.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (>= 0.0.27)
+      xpath (~> 0.1.3)
+    celerity (0.8.8)
+    childprocess (0.1.7)
+      ffi (~> 0.6.3)
     columnize (0.3.2)
     configuration (1.2.0)
+    culerity (0.2.15)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    ffi (0.6.3)
+      rake (>= 0.8.7)
     haml (3.0.25)
     heroku (1.18.0)
       json (~> 1.5.1)
@@ -52,6 +67,7 @@ GEM
       builder
     i18n (0.5.0)
     json (1.5.1)
+    json_pure (1.5.1)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -64,6 +80,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mysql (2.8.1)
+    nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -109,7 +126,13 @@ GEM
       ruby-debug-base19 (>= 0.11.19)
     ruby_core_source (0.1.4)
       archive-tar-minitar (>= 0.5.2)
+    rubyzip (0.9.4)
     sass (3.1.0.alpha.221)
+    selenium-webdriver (0.1.3)
+      childprocess (~> 0.1.5)
+      ffi (~> 0.6.3)
+      json_pure
+      rubyzip
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
@@ -117,6 +140,8 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    xpath (0.1.3)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -125,6 +150,7 @@ DEPENDENCIES
   annotate
   authlogic
   autotest
+  capybara
   haml
   heroku
   hoptoad_notifier

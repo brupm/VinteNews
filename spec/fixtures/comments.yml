@@ -1,0 +1,18 @@
+url_comment:
+  id: 1
+  user_id: 1 # bruno
+  post_id: 1 # url_post
+  body: Lorem magic bla bla
+
+text_comment:
+  id: 2
+  user_id: 2 # davis 
+  post_id: 2 #text_post
+  body: "Lorem (do the magic)"
+
+child_comment:
+  id: 3
+  user_id: 1 # bruno
+  post_id: 1 # url_post
+  parent_id: 1
+  body: "Lorem? nope :( lorem"
