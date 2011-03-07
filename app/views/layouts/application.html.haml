@@ -11,10 +11,12 @@
         #header
           = render :partial => "layouts/header"
         #main-content
-          = yield 
+          - flash.each do |k,v|
+            %p{:class => k}= v
+          = yield
         #footer
           %p
-            = link_to "Sobre este site", about_url 
+            = link_to "Sobre este site", about_url
             |
             = link_to "Twitter", "http://twitter.com/vintenews"
             |
