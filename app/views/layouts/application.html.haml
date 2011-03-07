@@ -13,6 +13,7 @@
         #main-content
           - flash.each do |k,v|
             %p{:class => k}= v
+            
           = yield
         #footer
           %p

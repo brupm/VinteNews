@@ -1,0 +1,16 @@
+- comment = comment.nil? ? @comment : comment 
+.comment
+  .faded 
+    submetido por
+    = link_to comment.user.login, user_path(comment.user)
+    há
+    %span.relative_post_date
+      = comment.created_at.to_formatted_s(:rfc822)
+    atrás
+    |
+    = link_to "link", post_comment_path(comment.post, comment)
+    |
+    = link_to "parent", post_path(comment.post)
+    
+  = comment.body
+%br  

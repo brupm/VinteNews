@@ -1,5 +1,19 @@
-%h1
-  = @post.title
+.post
+  %h3
+    %span.no_hover
+      = link_to image_tag("arrow.gif"), ""
+    %strong
+      = link_to @post.title, post_link_path(@post)
+    %span.faded
+      = "#{post_link_text(@post)}"
+  %p.mini
+    submetido por
+    = link_to @post.user.login, user_path(@post.user)
+    há
+    %span.relative_post_date
+      = @post.created_at.to_formatted_s(:rfc822)
+    atrás —
+    = link_to "#{@post.comments.count} comentários", post_path(@post)
 
 - if @post.body
   %p
@@ -7,9 +21,5 @@
 
 = render "comments/form"
     
-- if @post.comments
-  .comment
-    %h2 Comments    
-    - @post.comments.each do |comment|
-      = comment.body
-      = comment.user.login
+- if @post.comments.count > 0
+  = render "post_comments"

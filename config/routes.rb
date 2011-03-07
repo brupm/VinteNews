@@ -13,5 +13,9 @@ Vintenews::Application.routes.draw do
     resources :comments
   end
 
+  resources :posts do
+    resources :comments    
+  end
+  
   root :to => "posts#index"
 end

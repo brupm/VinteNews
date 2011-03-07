@@ -23,7 +23,7 @@ h1, h2 {
 h3 {
   font-size: 1em;
   font-weight: normal;
-  margin: 20px 0 0 0; }
+  margin: 10px 0 0 0; }
 
 p {
   margin: 0 0 10px 0; }
@@ -31,6 +31,9 @@ p {
 form input, form textarea {
   padding: 5px;
   margin-bottom: 10px; }
+
+#thetable p {
+  margin: 0; }
 
 pre {
   font-size: 1.2em; }
@@ -75,4 +78,22 @@ pre {
 
 .mini {
   padding-left: 28px;
-  color: #666666; }
+  color: #888888;
+  font-size: 80%; }
+
+.faded {
+  color: #888888;
+  margin-bottom: 3px; }
+
+.notice {
+  background: #fff18c;
+  padding: 5px;
+  margin: 5px 0; }
+
+.error {
+  background: #ff8481;
+  padding: 5px;
+  margin: 5px 0; }
+
+.no_hover a:hover {
+  background: none; }

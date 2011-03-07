@@ -4,7 +4,8 @@
     = link_to "↑", ""
     %strong
       = link_to post.title, post_link_path(post)
-    = "#{post_link_text(post)}"
+    %span.faded
+      = "#{post_link_text(post)}"
   %p.mini
     submetido por
     = link_to post.user.login, user_path(post.user)
@@ -12,4 +13,4 @@
     %span.relative_post_date
       = post.created_at.to_formatted_s(:rfc822)
     atrás —
-    %a{:href => "#"} #commentcount# comentários
+    = link_to "#{post.comments.count} comentários", post_path(post)

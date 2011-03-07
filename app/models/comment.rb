@@ -6,7 +6,8 @@ class Comment < ActiveRecord::Base
 
   validates :user_id, :presence => true
   validates :post_id, :presence => true
-  validates :body, :presence => true
+  validates :body, :presence => true, :length => { :within => 10..10000 }
+  
 end
 # == Schema Information
 #

@@ -1,6 +1,12 @@
 class CommentsController < ApplicationController
-  before_filter :find_or_create_comment
+  before_filter :find_or_create_comment, :except => [:index]
   before_filter :require_user, :except => [:show]
+  
+  def index
+    if params[:user_id]
+      @comments = User.find_by_login(params[:user_id]).comments
+    end
+  end
     
   def show  
   end
@@ -27,6 +33,7 @@ class CommentsController < ApplicationController
         @comment = @post.comments.find(params[:id])
       else
         @comment = @post.comments.build(params[:comment])
+        @comment.user = current_user
       end
     end
   

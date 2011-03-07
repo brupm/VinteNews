@@ -1,13 +1,11 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-  
-  validates_presence_of :title
-  validates_length_of :title, :within => 5..100
-  validates_length_of :url, :within => 5...1000, :allow_blank => true
-  validates_length_of :body, :within => 10...10000, :allow_blank => true  
-  validates_uniqueness_of :title, :on => :create, :message => "must be unique"
-  
+
+  validates :title, :presence => true, :uniqueness => true
+  validates :url, :url_format => true
+  validates :url, :presence => true, :if => Proc.new { |a| a.body.blank? }
+  validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
   
   scope :active, lambda { where("posts.status IS NULL") }
   

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:user_id]
-      @posts = User.find(params[:user_id]).posts
+      @posts = User.find_by_login(params[:user_id]).posts
     else
       @posts = Post.active
     end
@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.url ||= "http://"
   end
 
   def create
@@ -20,13 +21,12 @@ class PostsController < ApplicationController
       flash[:notice] = "Your article has been submitted."
       redirect_to root_path
     else
-      flash[:notice] = "There was a problem saving your article."
       render :action => 'new'
     end
   end
 
   def show
-
+    @comment = Comment.new
   end
 
   def edit

@@ -4,7 +4,7 @@ module PostsHelper
   end
 
   def post_link_text(post)
-    post.url.blank? ? "" : "(#{post.url})"
+    post.url.blank? ? "" : "(#{post.url.gsub("http://", "")})"
   end
   
 end
