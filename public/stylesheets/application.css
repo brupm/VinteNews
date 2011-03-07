@@ -32,9 +32,6 @@ form input, form textarea {
   padding: 5px;
   margin-bottom: 10px; }
 
-#thetable p {
-  margin: 0; }
-
 pre {
   font-size: 1.2em; }
 
@@ -77,5 +74,5 @@ pre {
   clear: both; }
 
 .mini {
-  padding-left: 38px;
+  padding-left: 28px;
   color: #666666; }
