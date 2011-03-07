@@ -13,4 +13,4 @@
     %span.relative_post_date
       = post.created_at.to_formatted_s(:rfc822)
     atrás —
-    = link_to "#{post.comments.count} comentários", post_path(post)
+    = link_to pluralize(post.comments.count, 'comentário'), post_path(post)
