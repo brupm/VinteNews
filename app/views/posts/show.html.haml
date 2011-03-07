@@ -4,3 +4,12 @@
 - if @post.body
   %p
     = @post.body
+
+= render "comments/form"
+    
+- if @post.comments
+  .comment
+    %h2 Comments    
+    - @post.comments.each do |comment|
+      = comment.body
+      = comment.user.login

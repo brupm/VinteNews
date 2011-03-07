@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :posts
+  has_many :comments
+  
   validates :login,  :presence => true
   validates :password, :presence => true
   validates :email, :presence => true, :uniqueness => true, :email_format => true
@@ -10,9 +13,6 @@ class User < ActiveRecord::Base
   def to_param
     login
   end
-  
-  has_many :posts
-  has_many :comments
 end
 
 # == Schema Information

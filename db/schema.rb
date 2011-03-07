@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110305153232) do
+ActiveRecord::Schema.define(:version => 20110305195247) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(:version => 20110305153232) do
     t.text     "body"
     t.string   "status"
   end
+
+  add_index "posts", ["status"], :name => "index_posts_on_status"
+  add_index "posts", ["user_id", "status"], :name => "index_posts_on_user_id_and_status"
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "login"

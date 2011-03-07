@@ -1,5 +1,5 @@
 %h1 Login
-- form_for @user_session do |f|
+= form_for @user_session do |f|
 
   - if @user_session.errors.any?
     %ul
@@ -14,6 +14,6 @@
     = f.label :password
     %br
     = f.password_field :password
-  %div 
+  %div
     = f.submit "Login", :disable_with => "Please wait..."
 

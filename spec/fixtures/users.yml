@@ -1,0 +1,38 @@
+bruno:
+  id: 1
+  login: bruno
+  crypted_password: 8b67d695cda61beb5d0ed74b46550c3ac2e775822c8389ea0baa8edadebeb4dc0a1414b79a442a014ef3fa45b747069baf76a830c92e96d45c33f39d6c84328c
+  current_login_ip: 127.0.0.1
+  email: bruno@bopia.com
+  login_count: 5
+  password_salt: zx5umZ75Rp3HcKMJxym
+  persistence_token: 12d388de327019220852e2fecc523a7c3344f70e944bfef84e1860cda958d92c204d0c97cf34231f8f55eb606e5bd2848c213f803a7c4edecc3e16c11b1ca8c0
+
+davis:
+  id: 2
+  login: davis  
+  crypted_password: d85e3cf4b60deca403b923f2478cbf15fcdeba1517ab1fee850fb5bedd640e80751d6796cb8fec1fc03a0e09c1dc2deb7cfb41e7f9cbe28f4d5ae98be168ffb5
+  current_login_ip: 127.0.0.1
+  email: davis@bopia.com
+  login_count: 1
+  password_salt: KqlRraiKeUiRXgj8QqWW
+  persistence_token: ceaa07d383deca16a65efb8333a21b4c518b5e2efaaad379fc824d880fc94d8f23d8ba8638c57c6edbdea2d413ab2eebd517754e86abba1d2e1236ed620c8e6a
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                :integer(4)      not null primary key
+#  login             :string(255)
+#  email             :string(255)
+#  crypted_password  :string(255)
+#  password_salt     :string(255)
+#  persistence_token :string(255)
+#  login_count       :integer(4)
+#  last_login_at     :datetime
+#  current_login_ip  :string(255)
+#  last_login_ip     :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
