@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   
   acts_as_authentic do |c|
     c.require_password_confirmation = false
-    c.merge_validates_format_of_email_field_options :message => 'deve ser um formato correto'
-    c.merge_validates_format_of_login_field_options :message => 'deve conter apenas letras, numeros, espacos, e .-_@'    
+    c.merge_validates_format_of_email_field_options :message => I18n.t('user_model.validation.email_format') 
+    c.merge_validates_format_of_login_field_options :message => I18n.t('user_model.validation.login_format')
   end
   
   def to_param

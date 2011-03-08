@@ -1,17 +1,18 @@
 .post
   %h3
-    = post.id
+    = post_counter+1
     %span.no_hover
-      = link_to image_tag("arrow.gif"), ""
+      = link_to image_tag("arrow-blue.png"), ""
     %strong
       = link_to post.title, post_link_path(post)
     %span.faded
       = "#{post_link_text(post)}"
   %p.mini
-    submetido por
+    = I18n.t('posts.submitted_by')
     = link_to post.user.login, user_path(post.user)
-    há
+    = I18n.t('posts.on')
     %span.relative_post_date
       = post.created_at.to_formatted_s(:rfc822)
-    atrás —
-    = link_to pluralize(post.comments.count, 'comentário'), post_path(post)
+    = I18n.t('posts.since')  
+    —
+    = link_to pluralize(post.comments.count, I18n.t('posts.comment')), post_path(post)

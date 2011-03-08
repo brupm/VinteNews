@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_back_or_default(root_path) 
-          flash[:notice] = 'User was successfully created.'
+          flash[:notice] = I18n.t('users_controller.messages.user_created')
         }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_back_or_default(root_path) 
-          flash[:notice] = 'User was successfully updated.'
+          flash[:notice] = I18n.t('users_controller.messages.user_updated')
         }
         format.xml  { head :ok }
       else

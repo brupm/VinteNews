@@ -1,18 +1,19 @@
 .post
   %h3
     %span.no_hover
-      = link_to image_tag("arrow.gif"), ""
+      = link_to image_tag("arrow-blue.png"), ""
     %strong
       = link_to @post.title, post_link_path(@post)
     %span.faded
       = "#{post_link_text(@post)}"
   %p.mini
-    submetido por
+    = I18n.t('posts.submitted_by')
     = link_to @post.user.login, user_path(@post.user)
-    há
+    = I18n.t('posts.posted_on')
     %span.relative_post_date
       = @post.created_at.to_formatted_s(:rfc822)
-    atrás —
+    = I18n.t('posts.since')
+    —
     = link_to "#{@post.comments.count} comentários", post_path(@post)
 
 - if @post.body

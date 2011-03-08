@@ -6,7 +6,7 @@
         %li= msg        
         
   %div
-    = f.label :login, "Usuário"
+    = f.label :login, I18n.t('users.login')
     %br
     = f.text_field :login
   %div
@@ -14,8 +14,8 @@
     %br
     = f.text_field :email
   %div
-    = f.label :password, "Senha"
+    = f.label :password, I18n.t('users.password')
     %br
     = f.password_field :password
   %div  
-    = f.submit 'Registrar', :disable_with => "Um minutinho..."
+    = f.submit I18n.t('users.register')

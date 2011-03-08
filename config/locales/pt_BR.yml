@@ -15,4 +15,64 @@ pt_BR:
               too_short: muito curto
   application_controller:
     messages:
-      must_be_logged_in: Você deve estar logado para acessar essa página.
+      must_be_logged_in: Você deve estar logado para acessar essa página.      
+  posts_controller:
+    messages:
+      post_submitted: Seu artigo foi enviado
+      post_updated: Seu artigo for atualizado
+      post_update_problem: Problem atualizando seu artigo
+  user_sessions_controller:
+    messages:
+      logged_in: Certo! Você esta autenticado!
+      logged_out: Você saiu!
+  users_controller:
+    messages:
+      user_created: Seu usuário foi criado
+      user_updated: Seu usuário foi atualizado     
+  user_model:
+    validations:
+      email_format: deve ser um formato correto
+      login_format: deve conter apenas letras, numeros, espacos, e .-_@
+  validators:
+    email: nao é um formato correto
+    url: nao é um formato correto
+  layouts:
+    most_popular: Mais Populares
+    recent: Recentes
+    submit_news: ENVIAR NOTÍCIA
+    edit_profile: Editar Profile
+    login: Login
+    logout: Logout
+    register: Registrar
+    about_this_site: Sobre este site
+  comments:  
+    submitted_by: submetido por
+    since: atrás
+    link: link
+    parent: parente
+    add_comment: Adicionar comentário
+    comments: Commentários
+    comment: Comment
+  users:
+    save: Salvar
+    password: Senha
+    new_password: Nova Senha?
+    about: Sobre
+    login: Usuário
+    register: Registrar
+    created: Criado
+    login_count: Login Count  
+    posts: Artigos
+    comments: Commentários
+  posts: 
+    comments: Commentários
+    title: Título
+    content: Conteudo
+    submit: Enviar    
+    submitted_by: submetido por
+    posted_on: há
+    since: atrás
+    comment: comment
+    comments: commentários
+    edit_post: Editar Artígo
+    new_post: Novo Artígo

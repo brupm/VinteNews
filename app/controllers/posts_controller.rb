@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.create(params[:post])
     if @post.save
-      flash[:notice] = "Your article has been submitted."
+      flash[:notice] = I18n.t('posts_controller.messages.post_submitted')
       redirect_to root_path
     else
       render :action => 'new'
@@ -35,10 +35,10 @@ class PostsController < ApplicationController
 
   def update
     if current_user.posts.find(params[:id]).update_attributes(params[:post])
-      flash[:notice] = "Your post was updated successfully."
+      flash[:notice] = I18n.t('posts_controller.messages.post_updated')
       redirect_to post_path(@post)
     else
-      flash[:notice] = "There was a problem updating your post."
+      flash[:notice] = I18n.t('posts_controller.messages.post_update_problem')
       render :action => 'edit'
     end
   end

@@ -8,4 +8,4 @@
   %div
     = f.text_area :body, {:cols => "90", :rows => "10"}
   %div  
-    = f.submit 'Adicionar coment&aacute;rio', :disable_with => "Um minutinho..."
+    = f.submit I18n.t('comments.add_comment')

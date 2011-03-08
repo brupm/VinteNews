@@ -1,3 +1,4 @@
 .comment
-  %h2 Comments    
+  %h2 
+    = I18n.t('posts.comments').capitalize
   = render :partial => "comments/comment", :collection => @post.comments

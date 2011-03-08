@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_to root_path, :format => params[:format], :notice => "Certo! Você esta autenticado!"
+      redirect_to root_path, :format => params[:format], :notice => I18n.t('user_sessions_controller.messages.logged_in')
     else
       render :action => 'new', :format => params[:format]
     end
@@ -24,7 +24,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    redirect_to login_path, :format => params[:format], :notice => "Você saiu!"
+    redirect_to login_path, :format => params[:format], :notice => I18n.t('user_sessions_controller.messages.logged_out')
   end
 
 end

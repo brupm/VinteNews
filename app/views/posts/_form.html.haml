@@ -6,7 +6,7 @@
         %li= msg        
         
   %div
-    = f.label :title, "Título"
+    = f.label :title, I18n.t('posts.title')
     %br
     = f.text_field :title
   %div
@@ -14,8 +14,8 @@
     %br
     = f.text_field :url
   %div
-    = f.label :body, "Conteudo"
+    = f.label :body, I18n.t('posts.content')
     %br
     = f.text_area :body, {:cols => "90", :rows => "10"}
   %div  
-    = f.submit 'Enviar', :disable_with => "Um minutinho..."
+    = f.submit I18n.t('posts.submit')
