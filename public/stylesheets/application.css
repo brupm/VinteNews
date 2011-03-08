@@ -86,9 +86,16 @@ pre {
   margin-bottom: 3px; }
 
 .notice {
-  background: #fff18c;
-  padding: 5px;
-  margin: 5px 0; }
+  color: white;
+  background: #00a859;
+  padding: 6px;
+  margin: 6px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 0 3px #cccccc;
+  -moz-box-shadow: 0 0 3px #cccccc;
+  -box-shadow: 0 0 3px #cccccc; }
 
 .error {
   background: #ff8481;
