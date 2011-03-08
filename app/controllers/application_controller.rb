@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user_session, :current_user, :error_messages
@@ -20,7 +21,7 @@ class ApplicationController < ActionController::Base
   def require_user
     unless current_user
       store_location
-      redirect_to new_user_session_url, :notice => "Voce deve estar logado para acessar essa pagina."
+      redirect_to new_user_session_url, :notice => I18n.t('application_controller.messages.must_be_logged_in')
       return false
     end
   end
@@ -28,7 +29,7 @@ class ApplicationController < ActionController::Base
   def require_no_user
     if current_user
       store_location
-      redirect_to root_url, :notice => "Voce deve estar logado para acessar essa pagina."
+      redirect_to root_url, :notice => I18n.t('application_controller.messages.must_be_logged_in')
       return false
     end
   end

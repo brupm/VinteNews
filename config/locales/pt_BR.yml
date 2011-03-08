@@ -1,0 +1,18 @@
+pt_BR: 
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            login: 
+              blank: em branco
+              too_short: muito curto
+            password:
+              blank: em branco 
+              too_short: muito curto
+            email:
+              blank: em branco 
+              too_short: muito curto
+  application_controller:
+    messages:
+      must_be_logged_in: Você deve estar logado para acessar essa página.
