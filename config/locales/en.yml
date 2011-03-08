@@ -1,4 +1,11 @@
 en:
+  authlogic:
+    error_messages:
+      login_blank: can't be blank
+      login_not_found: it is not valid
+      password_blank: can't be blank
+      password_invalid: it is not valid
+      no_authentication_details: You did not provide any details for authentication
   application_controller:
     messages:
       must_be_logged_in: You must be logged in to do this

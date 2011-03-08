@@ -13,6 +13,14 @@ pt_BR:
             email:
               blank: em branco 
               too_short: muito curto
+  authlogic:
+    error_messages:
+      login_blank: não pode ser em branco
+      login_not_found: não é valido
+      password_blank: não pode ser em branco
+      password_invalid: não é valido
+      no_authentication_details: Voce não escreveu nenhum data para autenticação
+    models:
   application_controller:
     messages:
       must_be_logged_in: Você deve estar logado para acessar essa página.      
@@ -75,4 +83,4 @@ pt_BR:
     comment: comment
     comments: commentários
     edit_post: Editar Artígo
-    new_post: Novo Artígo
+    new_post: Novo Artígo    
