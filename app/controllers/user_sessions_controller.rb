@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
@@ -14,7 +15,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_to root_path, :format => params[:format], :notice => "Certo! Voce esta autenticado!"
+      redirect_to root_path, :format => params[:format], :notice => "Certo! Você esta autenticado!"
     else
       render :action => 'new', :format => params[:format]
     end
@@ -23,7 +24,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    redirect_to login_path, :format => params[:format], :notice => "Voce saiu!"
+    redirect_to login_path, :format => params[:format], :notice => "Você saiu!"
   end
 
 end
