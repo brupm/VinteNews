@@ -5,34 +5,34 @@ pt_BR:
         user:
           attributes:
             login: 
-              blank: em branco
+              blank: vazio
               too_short: muito curto
             password:
-              blank: em branco 
-              too_short: muito curto
+              blank: vazia 
+              too_short: muito curta
             email:
-              blank: em branco 
+              blank: vazio 
               too_short: muito curto
   authlogic:
     error_messages:
-      login_blank: não pode ser em branco
+      login_blank: não pode estar vazio
       login_not_found: não é valido
-      password_blank: não pode ser em branco
+      password_blank: não pode estar vazio
       password_invalid: não é valido
-      no_authentication_details: Voce não escreveu nenhum data para autenticação
+      no_authentication_details: Voce não preencheu a data, para autenticação
     models:
   application_controller:
     messages:
-      must_be_logged_in: Você deve estar logado para acessar essa página.      
+      must_be_logged_in: Você deve estar logado para ver essa página.      
   posts_controller:
     messages:
-      post_submitted: Seu artigo foi enviado
-      post_updated: Seu artigo for atualizado
-      post_update_problem: Problem atualizando seu artigo
+      post_submitted: Sua notícia foi enviada
+      post_updated: Sua notícia for atualizado
+      post_update_problem: Erro ao atualizar notícia
   user_sessions_controller:
     messages:
-      logged_in: Certo! Você esta autenticado!
-      logged_out: Você saiu!
+      logged_in: Bem-vindo!
+      logged_out: Tchau! Volte logo!
   users_controller:
     messages:
       user_created: Seu usuário foi criado
@@ -40,7 +40,7 @@ pt_BR:
   user_model:
     validations:
       email_format: deve ser um formato correto
-      login_format: deve conter apenas letras, numeros, espacos, e .-_@
+      login_format: deve conter apenas letras, números, espaços, e os caracteres . - _ @
   validators:
     email: nao é um formato correto
     url: nao é um formato correto
@@ -51,7 +51,7 @@ pt_BR:
     edit_profile: Editar Profile
     login: Login
     logout: Logout
-    register: Registrar
+    register: Registro
     about_this_site: Sobre este site
   comments:  
     submitted_by: submetido por
@@ -59,8 +59,8 @@ pt_BR:
     link: link
     parent: parente
     add_comment: Adicionar comentário
-    comments: Commentários
-    comment: Comment
+    comments: Comentários
+    comment: Comentar
   users:
     save: Salvar
     password: Senha
@@ -69,18 +69,18 @@ pt_BR:
     login: Usuário
     register: Registrar
     created: Criado
-    login_count: Login Count  
+    login_count: Número de logins  
     posts: Artigos
-    comments: Commentários
+    comments: Comentários
   posts: 
-    comments: Commentários
+    comments: Comentários
     title: Título
-    content: Conteudo
+    content: Conteúdo
     submit: Enviar    
     submitted_by: submetido por
     posted_on: há
     since: atrás
-    comment: comment
-    comments: commentários
-    edit_post: Editar Artígo
-    new_post: Novo Artígo    
+    comment: comentário
+    comments: comentários
+    edit_post: Editar notícia
+    new_post: Nova notícia    
