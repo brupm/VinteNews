@@ -2,9 +2,9 @@ en:
   authlogic:
     error_messages:
       login_blank: can't be blank
-      login_not_found: it is not valid
+      login_not_found: is not valid
       password_blank: can't be blank
-      password_invalid: it is not valid
+      password_invalid: is not valid
       no_authentication_details: You did not provide any details for authentication
   application_controller:
     messages:
@@ -24,11 +24,11 @@ en:
       user_updated: 'User was successfully updated.'
   user_model:
     validations:
-      email_format: must be a correct format
+      email_format: must be in the correct format
       login_format: must contain only letters, numbers spaces and .-_@
   validators:
-    email: must be the correct format
-    url: must be the correct format
+    email: must be in the correct format
+    url: must be in the correct format
   layouts:
     most_popular: Most Popular
     recent: Recent
@@ -64,7 +64,7 @@ en:
     submitted_by: submitted by
     posted_on: on
     since: since
-    comment: comentário
+    comment: comment
     comments: comments
     edit_post: Edit Post
     new_post: New Post
