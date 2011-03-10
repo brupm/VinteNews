@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   def index
     if params[:user_id]
       @posts = User.find_by_login(params[:user_id]).posts
+    elsif params[:state] == "latest"
+      @posts = Post.active.recent
     else
       @posts = Post.active
     end
@@ -16,12 +18,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(params[:post])
-    if @post.save
-      flash[:notice] = I18n.t('posts_controller.messages.post_submitted')
-      redirect_to root_path
+    if params[:link].blank?
+      @post = current_user.posts.create(params[:post])
+      if @post.save
+        flash[:notice] = I18n.t('posts_controller.messages.post_submitted')
+        redirect_to root_path
+      else
+        render :action => 'new'
+      end
     else
-      render :action => 'new'
+      flash[:error] = I18n.t("messages.spammer")
+      redirect_to root_path      
     end
   end
 

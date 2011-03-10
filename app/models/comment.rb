@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   has_many :comments, :foreign_key => :parent_id
   belongs_to :post
   belongs_to :user
-
+  
   validates :user_id, :presence => true
   validates :post_id, :presence => true
   validates :body, :presence => true, :length => { :within => 10..10000 }

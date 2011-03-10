@@ -10,7 +10,7 @@
   %p.mini
     = I18n.t('posts.submitted_by')
     = link_to post.user.login, user_path(post.user)
-    = I18n.t('posts.on')
+    = I18n.t('posts.posted_on')
     %span.relative_post_date
       = post.created_at.to_formatted_s(:rfc822)
     = I18n.t('posts.since')  

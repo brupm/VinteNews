@@ -15,9 +15,9 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_to root_path, :format => params[:format], :notice => I18n.t('user_sessions_controller.messages.logged_in')
+      redirect_to root_path, :notice => I18n.t('user_sessions_controller.messages.logged_in')
     else
-      render :action => 'new', :format => params[:format]
+      render :action => 'new'
     end
   end
 

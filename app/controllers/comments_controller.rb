@@ -15,15 +15,21 @@ class CommentsController < ApplicationController
   end
   
   def create
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to(@post) }
-        format.xml  { render :xml => @comment, :status => :created, :location => @post }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+    if params[:link].blank?
+      respond_to do |format|
+        if @comment.save
+          format.html { redirect_to(@post) }
+          format.xml  { render :xml => @comment, :status => :created, :location => @post }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+        end
       end
+    else 
+      flash[:error] = I18n.t("messages.spammer")
+      redirect_to root_path
     end
+    
   end
   
   protected

@@ -1,4 +1,28 @@
 en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            login: 
+              blank: can't be empty
+              too_short: is too short
+            password:
+              blank: can't be empty
+              too_short: is too short
+            email:
+              blank: can't be empty
+              too_short: is too short
+        comment:
+          attributes:
+            body:
+              blank: can't be empty
+              too_short: is too short
+        post:
+          attributes:
+              title:
+              blank: can't be empty
+              too_short: is too short  
   authlogic:
     error_messages:
       login_blank: can't be blank
@@ -68,3 +92,5 @@ en:
     comments: comments
     edit_post: Edit Post
     new_post: New Post
+  messages:
+    spammer: Oh no you didn't.

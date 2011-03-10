@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
   
   scope :active, lambda { where("posts.status IS NULL") }
+  scope :recent, order("posts.created_at DESC")
   
 end
 # == Schema Information

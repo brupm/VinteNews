@@ -3,7 +3,7 @@
 %p
   = link_to I18n.t('layouts.most_popular'), root_path 
   |
-  = link_to I18n.t('layouts.recent'), root_path 
+  = link_to I18n.t('layouts.recent'), root_path(:state => "latest") 
   |
   %strong 
     = link_to I18n.t('layouts.submit_news'), new_post_path

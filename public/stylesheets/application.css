@@ -99,8 +99,14 @@ pre {
 
 .error {
   background: #ff8481;
-  padding: 5px;
-  margin: 5px 0; }
+  padding: 6px;
+  margin: 6px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 0 3px #cccccc;
+  -moz-box-shadow: 0 0 3px #cccccc;
+  -box-shadow: 0 0 3px #cccccc; }
 
 .no_hover a:hover {
   background: none; }
