@@ -4,7 +4,7 @@ module PostsHelper
   end
 
   def post_link_text(post)
-    post.url.blank? ? "" : "(#{post.url.gsub("http://", "")})"
+    post.url.blank? ? "" : "(#{post.url.match(/^(http:\/\/)?([^\/]+)/i)[0]})"
   end
   
 end

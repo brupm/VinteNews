@@ -10,6 +10,11 @@ class PostsController < ApplicationController
     else
       @posts = Post.active
     end
+      
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false } #index.rss.builder
+    end    
   end
 
   def new

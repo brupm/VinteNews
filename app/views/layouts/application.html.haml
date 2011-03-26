@@ -22,4 +22,6 @@
             |
             = link_to "Twitter", "http://twitter.com/vintenews"
             |
-            = link_to "RSS", "#"
+            = link_to "RSS", posts_url(:format => :rss)
+            |
+            = link_to "Latest RSS", posts_url(:format => :rss, :scope => "latest")

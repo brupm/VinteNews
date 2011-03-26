@@ -51,6 +51,9 @@ pt_BR:
     validations:
       email_format: deve ser um formato correto
       login_format: deve conter apenas letras, números, espaços, e os caracteres . - _ @
+  user_session:
+    validations:
+      bad_credentials: "Sua informação de login está errada"      
   validators:
     email: nao é um formato correto
     url: nao é um formato correto
@@ -85,7 +88,8 @@ pt_BR:
   posts: 
     comments: Comentários
     title: Título
-    content: Conteúdo
+    content: Conteúdo (não requerido caso haja URL)
+    url: URL (não requerido caso haja Conteúdo)
     submit: Enviar    
     submitted_by: submetido por
     posted_on: há

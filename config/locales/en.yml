@@ -49,7 +49,10 @@ en:
   user_model:
     validations:
       email_format: must be in the correct format
-      login_format: must contain only letters, numbers spaces and .-_@
+      login_format: must contain only letters, numbers spaces and .-_@      
+  user_session:
+    validations:
+      bad_credentials: "Your login information is invalid"
   validators:
     email: must be in the correct format
     url: must be in the correct format
@@ -83,7 +86,8 @@ en:
     comments: Comments
   posts:
     title: Title
-    content: Content
+    content: Message Body (only required if no URL)
+    url: URL (only required if no Message)
     submit: Submit
     submitted_by: submitted by
     posted_on: on

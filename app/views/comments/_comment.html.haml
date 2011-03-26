@@ -9,8 +9,9 @@
     = I18n.t('comments.since')
     |
     = link_to I18n.t('comments.link'), post_comment_path(comment.post, comment)
-    |
-    = link_to I18n.t('comments.parent'), post_path(comment.post)
+    - if request.url != post_url(comment.post)
+      | 
+      = link_to I18n.t('comments.parent'), post_path(comment.post)
     
   = comment.body
 %br  

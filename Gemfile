@@ -9,6 +9,7 @@ gem 'hoptoad_notifier'
 gem 'sass'
 gem 'autotest'
 gem 'authlogic'
+gem "vote_fu"
 
 group :development do 
   gem 'annotate'
