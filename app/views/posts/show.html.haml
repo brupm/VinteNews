@@ -1,6 +1,6 @@
 .post
   %span.arrow
-    = link_to image_tag("arrow-blue.png"), vote_path(:post_id => @post.id) unless current_user.voted_for?(@post)
+    = link_to image_tag("arrow-blue.png"), vote_path(:post_id => @post.id) unless current_user && current_user.voted_for?(@post)
   %h3
     %strong
       = link_to @post.title, post_link_path(@post)

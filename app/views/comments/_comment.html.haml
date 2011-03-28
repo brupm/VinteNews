@@ -2,7 +2,7 @@
 .comment  
   .faded 
     %span.arrow
-      = link_to image_tag("arrow-blue.png"), vote_path(:comment_id => comment.id) unless current_user.voted_for?(comment)
+      = link_to image_tag("arrow-blue.png"), vote_path(:comment_id => comment.id) unless current_user && current_user.voted_for?(comment)
     /= comment.karma
     = I18n.t('posts.points')
     = I18n.t('comments.submitted_by')
