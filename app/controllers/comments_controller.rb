@@ -34,9 +34,11 @@ class CommentsController < ApplicationController
   
   protected
     def find_or_create_comment
-      @post = Post.find(params[:post_id])
+      if params[:post_id]
+        @post = Post.find(params[:post_id])
+      end
       if params[:id]
-        @comment = @post.comments.find(params[:id])
+        @comment = Comment.find(params[:id])
       else
         @comment = @post.comments.build(params[:comment])
         @comment.user = current_user

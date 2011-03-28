@@ -1,6 +1,10 @@
 - comment = comment.nil? ? @comment : comment 
-.comment
+.comment  
   .faded 
+    %span.arrow
+      = link_to image_tag("arrow-blue.png"), vote_path(:comment_id => comment.id) unless current_user.voted_for?(comment)
+    /= comment.karma
+    = I18n.t('posts.points')
     = I18n.t('comments.submitted_by')
     = link_to comment.user.login, user_path(comment.user)
     = I18n.t('posts.posted_on')

@@ -5,7 +5,7 @@ body {
   background: #f7f7f7;
   color: black;
   font-size: small;
-  line-height: 1.5em; }
+  line-height: 1.3em; }
 
 a {
   color: #3e4095;
@@ -108,5 +108,15 @@ pre {
   -moz-box-shadow: 0 0 3px #cccccc;
   -box-shadow: 0 0 3px #cccccc; }
 
-.no_hover a:hover {
-  background: none; }
+.counter {
+  float: left;
+  font-size: 90%; }
+
+.arrow {
+  margin-right: 2px;
+  float: left; }
+  .arrow a:hover {
+    background: none; }
+
+.post h3 {
+  padding-left: 28px; }

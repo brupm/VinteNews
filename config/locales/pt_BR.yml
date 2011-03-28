@@ -47,6 +47,9 @@ pt_BR:
     messages:
       user_created: Seu usuário foi criado
       user_updated: Seu usuário foi atualizado     
+  votes_controller:
+    messages:
+      voted: Seu voto foi aceito
   user_model:
     validations:
       email_format: deve ser um formato correto
@@ -82,10 +85,12 @@ pt_BR:
     login: Usuário
     register: Registrar
     created: Criado
+    karma: Karma    
     login_count: Número de logins  
     posts: Artigos
     comments: Comentários
   posts: 
+    points: pontos
     comments: Comentários
     title: Título
     content: Conteúdo (não requerido caso haja URL)

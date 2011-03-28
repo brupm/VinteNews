@@ -9,7 +9,7 @@
     = link_to I18n.t('layouts.submit_news'), new_post_path
   %span{:style => "float:right;"}
     - if current_user
-      = link_to I18n.t('layouts.edit_profile'), user_path(current_user)
+      = link_to "#{I18n.t('layouts.edit_profile')} (#{current_user.login})", user_path(current_user)
       |
       = link_to I18n.t('layouts.logout'), logout_path 
     - else

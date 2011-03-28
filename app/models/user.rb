@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  acts_as_voter
+  
   has_many :posts
   has_many :comments
+  has_karma :posts
   
   validates :login,  :presence => true
   validates :password, :presence => true

@@ -7,7 +7,8 @@ Vintenews::Application.routes.draw do
   resource :user_session
   resources :comments
   resources :posts
-
+  match 'vote' => 'votes#create'
+  
   resources :users do
     resources :posts
     resources :comments

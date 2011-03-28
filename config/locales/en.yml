@@ -81,10 +81,12 @@ en:
     login: Login
     register: Register
     created: Created
+    karma: Karma
     login_count: Login Count
     posts: Posts
     comments: Comments
   posts:
+    points: points
     title: Title
     content: Message Body (only required if no URL)
     url: URL (only required if no Message)

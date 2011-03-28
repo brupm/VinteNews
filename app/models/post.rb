@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
+  acts_as_voteable
+    
   belongs_to :user
   has_many :comments
+  has_karma :comments
 
   validates :title, :presence => true, :uniqueness => true
   validates :url, :url_format => true
@@ -8,8 +11,12 @@ class Post < ActiveRecord::Base
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
   
   scope :active, lambda { where("posts.status IS NULL") }
-  scope :recent, order("posts.created_at DESC")
+  scope :latest, order("posts.created_at DESC")
+  scope :popular 
   
+  scope :popular, lambda {
+     joins(:votes).group("posts.id").order("") #where("posts.published_at IS NOT NULL AND posts.published_at <= ?", Time.zone.now). #& Post.active
+   }
 end
 # == Schema Information
 #
