@@ -11,10 +11,7 @@ class Post < ActiveRecord::Base
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
 
   scope :active, lambda { where("posts.status IS NULL") }
-  scope :popular, lambda {
-    #joins(:votes).where("votes.voteable_type = 'Post' AND posts.id = votes.voteable_id")
-    limit(20) & Post.active
-  }
+  scope :popular, lambda { limit(20).merge(Post.active) }
   scope :latest, order("posts.created_at DESC").merge(Post.active)
 end
 # == Schema Information
