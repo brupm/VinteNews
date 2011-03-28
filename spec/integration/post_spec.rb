@@ -14,6 +14,7 @@ describe "Post" do
       login_as("davis", "davis")
       visit(new_post_path)
     end
+
     it "should create an url post" do
       fill_in("post_title", :with => "Testing an url post")
       fill_in("post_url", :with => "http://blog.bopia.com/post/123")
