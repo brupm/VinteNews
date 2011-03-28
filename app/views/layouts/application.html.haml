@@ -4,7 +4,7 @@
     %title VinteNews
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8'}/
     = stylesheet_link_tag :all
-    = javascript_include_tag "jquery.min.js", "date.extensions.js", "application.js"
+    = javascript_include_tag 'jquery.min.js', 'rails.js', "date.extensions.js", "application.js"
     = csrf_meta_tag
   %body
     #container
@@ -14,7 +14,7 @@
         #main-content
           - flash.each do |k,v|
             %p{:class => k}= v
-            
+
           = yield
         #footer
           %p
