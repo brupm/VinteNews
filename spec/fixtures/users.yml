@@ -10,13 +10,13 @@ bruno:
 
 davis:
   id: 2
-  login: davis  
-  crypted_password: d85e3cf4b60deca403b923f2478cbf15fcdeba1517ab1fee850fb5bedd640e80751d6796cb8fec1fc03a0e09c1dc2deb7cfb41e7f9cbe28f4d5ae98be168ffb5
+  login: daviscabral
+  crypted_password: 6c86defa04930a4b690e53f790bf14426485282234cc983a26faf9510623cd9a9aa764897325de104d13df50a0d5c983edd7892e026845c7d89721f6bdf8a2e5
   current_login_ip: 127.0.0.1
   email: davis@bopia.com
   login_count: 1
-  password_salt: KqlRraiKeUiRXgj8QqWW
-  persistence_token: ceaa07d383deca16a65efb8333a21b4c518b5e2efaaad379fc824d880fc94d8f23d8ba8638c57c6edbdea2d413ab2eebd517754e86abba1d2e1236ed620c8e6a
+  password_salt: kdQovBcYOXj7Qp2V8pSP
+  persistence_token: ebf369c419afda08e1e089bd3e200a367ee2e1e54056037705fe8ab9b5d1b05ffcf659ef401542ba50e622d90937f0e704e5fd7a8e50f890301d2720748ce717
 
 # == Schema Information
 #

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Post" do
+  fixtures :users
 
   it "should redirect to login page on new and create actions" do
     visit(new_post_path)
@@ -11,7 +12,7 @@ describe "Post" do
   describe "Logged in actions" do
 
     before(:each) do
-      login_as("davis", "davis")
+      login_as("daviscabral", "daviscabral")
       visit(new_post_path)
     end
 
