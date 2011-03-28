@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   acts_as_voteable
-    
+
   belongs_to :user
   has_many :comments
   has_karma :comments
@@ -9,14 +9,13 @@ class Post < ActiveRecord::Base
   validates :url, :url_format => true
   validates :url, :presence => true, :if => Proc.new { |a| a.body.blank? }
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
-  
+
   scope :active, lambda { where("posts.status IS NULL") }
-  scope :popular, lambda { 
+  scope :popular, lambda {
     #joins(:votes).where("votes.voteable_type = 'Post' AND posts.id = votes.voteable_id")
     limit(20) & Post.active
   }
-  scope :latest, order("posts.created_at DESC") & Post.active
-  
+  scope :latest, order("posts.created_at DESC").merge(Post.active)
 end
 # == Schema Information
 #
