@@ -9,7 +9,7 @@
     %span.faded
       = "#{post_link_text(post)}"
   %p.mini
-    = post.karma
+    = post.user.karma + post.karma
     = I18n.t('posts.points')
     = I18n.t('posts.submitted_by')
     = link_to post.user.login, user_path(post.user)

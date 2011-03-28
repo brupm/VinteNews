@@ -11,12 +11,12 @@ class Post < ActiveRecord::Base
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
   
   scope :active, lambda { where("posts.status IS NULL") }
-  scope :latest, order("posts.created_at DESC")
-  scope :popular 
+  scope :popular, lambda { 
+    #joins(:votes).where("votes.voteable_type = 'Post' AND posts.id = votes.voteable_id")
+    limit(20) & Post.active
+  }
+  scope :latest, order("posts.created_at DESC") & Post.active
   
-  scope :popular, lambda {
-     joins(:votes).group("posts.id").order("") #where("posts.published_at IS NOT NULL AND posts.published_at <= ?", Time.zone.now). #& Post.active
-   }
 end
 # == Schema Information
 #

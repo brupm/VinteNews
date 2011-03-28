@@ -6,9 +6,9 @@ class PostsController < ApplicationController
     if params[:user_id]
       @posts = User.find_by_login(params[:user_id]).posts
     elsif params[:state] == "latest"
-      @posts = Post.active.recent
+      @posts = Post.latest
     else
-      @posts = Post.active
+      @posts = Post.popular.sort_by{ |p| p.votes_for }.reverse
     end
       
     respond_to do |format|
