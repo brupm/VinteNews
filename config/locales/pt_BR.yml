@@ -1,18 +1,25 @@
-pt_BR: 
+pt_BR:
   activerecord:
+    attributes:
+      user:
+        login: Usuário
+        password: Senha
+        email: "E-mail"
     errors:
       models:
         user:
           attributes:
-            login: 
+            login:
               blank: vazio
               too_short: muito curto
+              taken: já está sendo usado
             password:
-              blank: vazia 
+              blank: vazia
               too_short: muito curta
             email:
-              blank: vazio 
+              blank: vazio
               too_short: muito curto
+              taken: já está sendo usado
         comment:
           attributes:
             body:
@@ -33,7 +40,7 @@ pt_BR:
     models:
   application_controller:
     messages:
-      must_be_logged_in: Você deve estar logado para ver essa página.      
+      must_be_logged_in: Você deve estar logado para ver essa página.
   posts_controller:
     messages:
       post_submitted: Sua notícia foi enviada
@@ -46,30 +53,30 @@ pt_BR:
   users_controller:
     messages:
       user_created: Seu usuário foi criado
-      user_updated: Seu usuário foi atualizado     
+      user_updated: Seu usuário foi atualizado
   votes_controller:
     messages:
       voted: Seu voto foi aceito
   user_model:
     validations:
-      email_format: deve ser um formato correto
+      email_format: deve ser em um formato correto
       login_format: deve conter apenas letras, números, espaços, e os caracteres . - _ @
   user_session:
     validations:
-      bad_credentials: "Sua informação de login está errada"      
+      bad_credentials: "Sua informação de login está errada"
   validators:
-    email: nao é um formato correto
-    url: nao é um formato correto
+    email: não é um formato correto
+    url: não é um formato correto
   layouts:
     most_popular: Mais Populares
     recent: Recentes
     submit_news: ENVIAR NOTÍCIA
-    edit_profile: Editar Profile
+    edit_profile: Editar Perfil
     login: Login
     logout: Logout
     register: Registro
     about_this_site: Sobre este site
-  comments:  
+  comments:
     submitted_by: submetido por
     since: atrás
     link: link
@@ -85,23 +92,23 @@ pt_BR:
     login: Usuário
     register: Registrar
     created: Criado
-    karma: Karma    
-    login_count: Número de logins  
+    karma: Karma
+    login_count: Número de logins
     posts: Artigos
     comments: Comentários
-  posts: 
+  posts:
     points: pontos
     comments: Comentários
     title: Título
     content: Conteúdo (não requerido caso haja URL)
     url: URL (não requerido caso haja Conteúdo)
-    submit: Enviar    
+    submit: Enviar
     submitted_by: submetido por
     posted_on: há
     since: atrás
     comment: comentário
     comments: comentários
     edit_post: Editar notícia
-    new_post: Nova notícia    
+    new_post: Nova notícia
   messages:
-    spammer: Oh no you didn't.    
+    spammer: Oh no you didn't.
