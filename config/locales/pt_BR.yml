@@ -1,4 +1,6 @@
 pt_BR:
+  common:
+    button_disable_with: "Um minutinho..."
   date:
     formats:
       default: "%d/%m/%Y"
@@ -29,6 +31,8 @@ pt_BR:
         login: Usuário
         password: Senha
         email: "E-mail"
+      user_session:
+        remember_me: Lembre-se de mim
     errors:
       models:
         user:
@@ -61,7 +65,6 @@ pt_BR:
       password_blank: não pode estar vazio
       password_invalid: não é valido
       no_authentication_details: Voce não preencheu a data, para autenticação
-    models:
   application_controller:
     messages:
       must_be_logged_in: Você deve estar logado para ver essa página.

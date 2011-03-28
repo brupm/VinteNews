@@ -7,13 +7,17 @@
         %li= msg
 
   %div
-    = f.label :login, "Usuário"
+    = f.label :login, t("activerecord.attributes.user.login")
     %br
     = f.text_field :login
   %div
-    = f.label :password, "Senha"
+    = f.label :password, t("activerecord.attributes.user.password")
     %br
     = f.password_field :password
-  %div
-    = f.submit "Login", :disable_with => "Um minutinho..."
+    %br
+    = f.check_box :remember_me
+    = f.label :remember_me, t("activerecord.attributes.user_session.remember_me")
+    %br
 
+  %div
+    = f.submit "Login", :disable_with => t("common.button_disable_with")
