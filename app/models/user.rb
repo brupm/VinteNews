@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
   
   def admin?
-    login == "brupm" || login == "ibias" || login == "daviscabral"
+    login == "brupm" || login == "ibias" || login == "daviscabral" || login == "roberto" || login == "ozeias"
   end
 end
 
