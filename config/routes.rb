@@ -3,6 +3,7 @@ Vintenews::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy'
   match 'register' => 'users#new'
   match 'about' => 'pages#about'
+  match 'lists' => 'pages#lists'  
 
   resource :user_session
   resources :comments

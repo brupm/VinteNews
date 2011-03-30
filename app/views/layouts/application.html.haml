@@ -19,6 +19,8 @@
           = yield
         #footer
           %p
+            = link_to I18n.t('layouts.lists'), lists_url
+            |
             = link_to I18n.t('layouts.about_this_site'), about_url
             |
             = link_to "Twitter", "http://twitter.com/vintenews"

@@ -95,6 +95,7 @@ pt_BR:
     email: não é um formato correto
     url: não é um formato correto
   layouts:
+    lists: Listas
     most_popular: Mais Populares
     recent: Recentes
     submit_news: ENVIAR NOTÍCIA
@@ -104,6 +105,9 @@ pt_BR:
     register: Registro
     about_this_site: Sobre este Site
     comments: Commentários
+  lists:
+    lists: Listas
+    popular_users: Usuários Populares
   comments:
     news: em
     submitted_by: submetido por

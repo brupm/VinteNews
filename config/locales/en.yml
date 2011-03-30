@@ -57,6 +57,7 @@ en:
     email: must be in the correct format
     url: must be in the correct format
   layouts:
+    lists: Lists
     most_popular: Most Popular
     recent: Recent
     submit_news: SUBMIT
@@ -66,6 +67,9 @@ en:
     register: Register
     about_this_site: About this site
     comments: Comments
+  lists:
+    lists: Lists
+    popular_users: Popular Users
   comments:  
     news: on
     submitted_by: submitted by
