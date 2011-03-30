@@ -1,0 +1,9 @@
+%h1
+  = I18n.t("lists.lists")
+  
+%p
+  = I18n.t("lists.popular_users")
+  %ul#selector
+    - @popular_users.each do |user|
+      %li
+        = link_to "#{user.login} (#{user.karma})", user_path(user)
