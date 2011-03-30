@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :find_or_create_comment, :except => [:index, :destroy]
-  before_filter :require_user, :except => [:show]
+  before_filter :require_user, :except => [:show, :index]
   
   def index
     if params[:user_id]
