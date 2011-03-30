@@ -14,6 +14,10 @@ class Post < ActiveRecord::Base
   
   scope :popular, lambda { limit(20) }
   scope :latest, order("posts.created_at DESC")
+
+  def to_param
+    "#{id}-#{title.gsub(/[^a-z0-9]+/i, '-').downcase}"
+  end
   
   def mark_as_deleted
     self.status = "deleted"
