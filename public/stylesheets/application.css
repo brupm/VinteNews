@@ -71,6 +71,14 @@ pre {
   padding: 15px 0 10px 0;
   border-top: 2px solid #ffcc29; }
 
+.comments .comment a {
+  color: #3e4095;
+  text-decoration: none; }
+  .comments .comment a:hover {
+    background: #00a859;
+    color: white;
+    text-decoration: none; }
+
 .breakeronly {
   margin: 0;
   padding: 0;

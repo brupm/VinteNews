@@ -15,13 +15,13 @@
       = @post.created_at.to_formatted_s(:rfc822)
     = I18n.t('posts.since')
     —
-    = link_to "#{@post.comments.count} comentários", post_path(@post)
+    = link_to pluralize(@post.comments.count, I18n.t('posts.comment')), post_path(@post)
 
 - if @post.body
   %p
     = @post.body
 
 = render "comments/form"
-    
+
 - if @post.comments.count > 0
   = render "post_comments"
