@@ -18,4 +18,4 @@
     %br
     = f.password_field :password
   %div  
-    = f.submit I18n.t('users.register')
+    = f.submit I18n.t('users.register'), :disable_with => t("common.button_disable_with")

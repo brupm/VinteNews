@@ -18,4 +18,4 @@
     %br
     = f.text_area :about, {:cols => "90", :rows => "10"}
   %div  
-    = f.submit I18n.t('users.save')
+    = f.submit I18n.t('users.save'), :disable_with => t("common.button_disable_with")

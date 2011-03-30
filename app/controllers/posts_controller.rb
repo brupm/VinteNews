@@ -57,7 +57,7 @@ class PostsController < ApplicationController
   end
   
   def destroy
-    if current_user.admin?
+    if current_user.try(:admin?)
       @post.destroy
     end
     redirect_to root_path

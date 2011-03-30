@@ -19,4 +19,4 @@
     = f.text_area :body, {:cols => "90", :rows => "10"}
   = render 'layouts/spammer_check'      
   %div  
-    = f.submit I18n.t('posts.submit')
+    = f.submit I18n.t('posts.submit'), :disable_with => t("common.button_disable_with")

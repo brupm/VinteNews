@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   acts_as_voteable
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   has_karma :comments
 
   validates :title, :presence => true, :uniqueness => true

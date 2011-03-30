@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    if current_user.admin?
+    if current_user.try(:admin?)
       @comment = Comment.find(params[:id])
       @comment.destroy
     end
