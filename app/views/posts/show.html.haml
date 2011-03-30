@@ -7,6 +7,7 @@
     %span.faded
       = "#{post_link_text(@post)}"
   %p.mini
+    = pluralize(@post.votes_for, I18n.t('posts.point'))
     = I18n.t('posts.submitted_by')
     = link_to @post.user.login, user_path(@post.user)
     = I18n.t('posts.posted_on')

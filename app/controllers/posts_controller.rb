@@ -58,7 +58,8 @@ class PostsController < ApplicationController
   
   def destroy
     if current_user.try(:admin?)
-      @post.destroy
+      @post.status = "deleted"
+      @post.save
     end
     redirect_to root_path
   end

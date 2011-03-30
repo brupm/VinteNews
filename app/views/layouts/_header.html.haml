@@ -5,6 +5,8 @@
   |
   = link_to I18n.t('layouts.recent'), root_path(:order => "latest") 
   |
+  = link_to I18n.t('layouts.comments'), comments_path
+  |
   %strong 
     = link_to I18n.t('layouts.submit_news'), new_post_path
   %span{:style => "float:right;"}

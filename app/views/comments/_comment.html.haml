@@ -3,8 +3,7 @@
   .faded 
     %span.arrow
       = link_to image_tag("arrow-blue.png"), vote_path(:comment_id => comment.id) unless current_user && current_user.voted_for?(comment)
-    /= comment.karma
-    = I18n.t('posts.points')
+    = pluralize(comment.votes_for, I18n.t('posts.point'))
     = I18n.t('comments.submitted_by')
     = link_to comment.user.login, user_path(comment.user)
     = I18n.t('posts.posted_on')
@@ -14,8 +13,11 @@
     |
     = link_to I18n.t('comments.link'), post_comment_path(comment.post, comment)
     - if request.url != post_url(comment.post)
-      | 
+      |
       = link_to I18n.t('comments.parent'), post_path(comment.post)
+      |
+      = "#{I18n.t("comments.news")}:"
+      = link_to comment.post.title, ""        
     - if current_user.try(:admin?)
       |
       = link_to "Delete", comment_path(comment), :method => :delete, :confirm => I18n.t("comments.delete_confirmation")

@@ -30,6 +30,7 @@ describe Comment do
   
 end
 
+
 # == Schema Information
 #
 # Table name: comments
@@ -40,5 +41,7 @@ end
 #  body       :text
 #  created_at :datetime
 #  updated_at :datetime
+#  parent_id  :integer(4)
+#  status     :string(255)
 #
 

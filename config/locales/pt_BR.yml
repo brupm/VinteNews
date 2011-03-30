@@ -103,7 +103,9 @@ pt_BR:
     logout: Logout
     register: Registro
     about_this_site: Sobre este Site
+    comments: Commentários
   comments:
+    news: em
     submitted_by: submetido por
     since: atrás
     link: link
@@ -125,7 +127,7 @@ pt_BR:
     posts: Artigos
     comments: Comentários
   posts:
-    points: pontos
+    point: ponto
     comments: Comentários
     title: Título
     content: Conteúdo (não requerido caso haja URL)

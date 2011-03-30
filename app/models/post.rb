@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   acts_as_voteable
 
   belongs_to :user
-  has_many :comments, :dependent => :destroy
+  has_many :comments
   has_karma :comments
 
   validates :title, :presence => true, :uniqueness => true
@@ -10,10 +10,12 @@ class Post < ActiveRecord::Base
   validates :url, :presence => true, :if => Proc.new { |a| a.body.blank? }
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
 
-  scope :active, lambda { where("posts.status IS NULL") }
-  scope :popular, lambda { limit(20).merge(Post.active) }
-  scope :latest, order("posts.created_at DESC").merge(Post.active)
+  default_scope where(:status => nil) 
+  
+  scope :popular, lambda { limit(20) }
+  scope :latest, order("posts.created_at DESC")
 end
+
 # == Schema Information
 #
 # Table name: posts
@@ -25,5 +27,6 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  body       :text
+#  status     :string(255)
 #
 

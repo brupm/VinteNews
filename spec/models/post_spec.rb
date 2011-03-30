@@ -7,6 +7,7 @@ describe Post do
   
   it "should have a url"
 end
+
 # == Schema Information
 #
 # Table name: posts
@@ -18,5 +19,6 @@ end
 #  created_at :datetime
 #  updated_at :datetime
 #  body       :text
+#  status     :string(255)
 #
 

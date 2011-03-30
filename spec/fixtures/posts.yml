@@ -10,6 +10,7 @@ text_post:
   title: "Best Post Title"
   body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
 
+
 # == Schema Information
 #
 # Table name: posts
@@ -21,5 +22,6 @@ text_post:
 #  created_at :datetime
 #  updated_at :datetime
 #  body       :text
+#  status     :string(255)
 #
 

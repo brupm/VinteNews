@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
   def index
     if params[:user_id]
       @comments = User.find_by_login(params[:user_id]).comments
+    else
+      @comments = Comment.latest.sort_by{ |c| c.votes_for }.reverse
     end
   end
     
@@ -34,7 +36,8 @@ class CommentsController < ApplicationController
   def destroy
     if current_user.try(:admin?)
       @comment = Comment.find(params[:id])
-      @comment.destroy
+      @comment.status = "deleted"
+      @comment.save
     end
     redirect_to @comment.post
   end

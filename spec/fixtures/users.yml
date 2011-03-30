@@ -18,11 +18,12 @@ davis:
   password_salt: kdQovBcYOXj7Qp2V8pSP
   persistence_token: ebf369c419afda08e1e089bd3e200a367ee2e1e54056037705fe8ab9b5d1b05ffcf659ef401542ba50e622d90937f0e704e5fd7a8e50f890301d2720748ce717
 
+
 # == Schema Information
 #
 # Table name: users
 #
-#  id                :integer(4)      not null primary key
+#  id                :integer(4)      not null, primary key
 #  login             :string(255)
 #  email             :string(255)
 #  crypted_password  :string(255)
@@ -34,5 +35,6 @@ davis:
 #  last_login_ip     :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
+#  about             :text
 #
 

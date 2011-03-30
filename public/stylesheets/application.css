@@ -85,7 +85,10 @@ pre {
 
 .faded {
   color: #888888;
-  margin-bottom: 3px; }
+  margin-bottom: 3px;
+  font-size: 85%; }
+  .faded a {
+    color: #888888; }
 
 .notice {
   color: white;

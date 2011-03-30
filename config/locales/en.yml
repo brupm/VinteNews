@@ -65,7 +65,9 @@ en:
     logout: Logout
     register: Register
     about_this_site: About this site
+    comments: Comments
   comments:  
+    news: on
     submitted_by: submitted by
     since: since
     link: link
@@ -87,7 +89,7 @@ en:
     posts: Posts
     comments: Comments
   posts:
-    points: points
+    point: point
     title: Title
     content: Message Body (only required if no URL)
     url: URL (only required if no Message)
