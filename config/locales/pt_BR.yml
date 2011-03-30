@@ -102,7 +102,7 @@ pt_BR:
     login: Login
     logout: Logout
     register: Registro
-    about_this_site: Sobre este site
+    about_this_site: Sobre este Site
   comments:
     submitted_by: submetido por
     since: atrás
@@ -111,6 +111,7 @@ pt_BR:
     add_comment: Adicionar comentário
     comments: Comentários
     comment: Comentar
+    delete_confirmation: Tem certeza?
   users:
     save: Salvar
     password: Senha
@@ -137,5 +138,6 @@ pt_BR:
     comments: comentários
     edit_post: Editar notícia
     new_post: Nova notícia
+    delete_confirmation: Tem certeza?    
   messages:
     spammer: Oh no you didn't.

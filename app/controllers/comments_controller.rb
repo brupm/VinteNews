@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :find_or_create_comment, :except => [:index]
+  before_filter :find_or_create_comment, :except => [:index, :destroy]
   before_filter :require_user, :except => [:show]
   
   def index
@@ -28,8 +28,15 @@ class CommentsController < ApplicationController
     else 
       flash[:error] = I18n.t("messages.spammer")
       redirect_to root_path
+    end  
+  end
+  
+  def destroy
+    if current_user.admin?
+      @comment = Comment.find(params[:id])
+      @comment.destroy
     end
-    
+    redirect_to @comment.post
   end
   
   protected

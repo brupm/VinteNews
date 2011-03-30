@@ -73,6 +73,7 @@ en:
     add_comment: Add comment
     comments: Comments
     comment: Comment
+    delete_confirmation: Are you sure?        
   users:
     save: Save
     password: Password
@@ -98,5 +99,6 @@ en:
     comments: comments
     edit_post: Edit Post
     new_post: New Post
+    delete_confirmation: Are you sure?    
   messages:
     spammer: Oh no you didn't.

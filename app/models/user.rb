@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   def to_param
     login
   end
+  
+  def admin?
+    login == "brupm" || login == "ibias" || login == "davis"
+  end
 end
 
 # == Schema Information

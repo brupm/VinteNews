@@ -16,6 +16,9 @@
     - if request.url != post_url(comment.post)
       | 
       = link_to I18n.t('comments.parent'), post_path(comment.post)
+    - if current_user.admin?
+      |
+      = link_to "Delete", comment_path(comment), :method => :delete, :confirm => I18n.t("comments.delete_confirmation")
     
   = comment.body
 %br  

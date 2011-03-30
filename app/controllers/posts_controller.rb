@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
-  before_filter :find_post, :only => [:show, :edit, :update]
+  before_filter :find_post, :only => [:show, :edit, :update, :destroy]
 
   def index
     if params[:user_id]
       @posts = User.find_by_login(params[:user_id]).posts
-    elsif params[:state] == "latest"
+    elsif params[:order] == "latest"
       @posts = Post.latest
     else
       @posts = Post.popular.sort_by{ |p| p.votes_for }.reverse
@@ -19,7 +19,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.url ||= "http://"
+    @post.title = params[:title].strip unless params[:title].blank?    
+    @post.url = params[:url].blank? ? "http://" : params[:url]        
   end
 
   def create
@@ -53,6 +54,13 @@ class PostsController < ApplicationController
       flash[:notice] = I18n.t('posts_controller.messages.post_update_problem')
       render :action => 'edit'
     end
+  end
+  
+  def destroy
+    if current_user.admin?
+      @post.destroy
+    end
+    redirect_to root_path
   end
 
   def find_post
