@@ -11,10 +11,15 @@ class Comment < ActiveRecord::Base
   validates :post_id, :presence => true
   validates :body, :presence => true, :length => { :within => 2..10000 }
   
-  default_scope where(:status => nil) 
+  default_scope where(:status => nil)
      
   scope :latest, order("created_at DESC")
   scope :popular, lambda { limit(20) }  
+  
+  def mark_as_deleted
+    self.status = "deleted"
+    self.save
+  end
   
 end
 

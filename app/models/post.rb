@@ -14,6 +14,11 @@ class Post < ActiveRecord::Base
   
   scope :popular, lambda { limit(20) }
   scope :latest, order("posts.created_at DESC")
+  
+  def mark_as_deleted
+    self.status = "deleted"
+    self.save
+  end
 end
 
 # == Schema Information

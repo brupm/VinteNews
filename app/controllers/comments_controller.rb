@@ -36,8 +36,7 @@ class CommentsController < ApplicationController
   def destroy
     if current_user.try(:admin?)
       @comment = Comment.find(params[:id])
-      @comment.status = "deleted"
-      @comment.save
+      @comment.mark_as_deleted
     end
     redirect_to @comment.post
   end
