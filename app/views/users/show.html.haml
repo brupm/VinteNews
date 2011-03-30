@@ -10,7 +10,11 @@
   = link_to "#{I18n.t('users.posts')} (#{@user.posts.count})", user_posts_path(@user)
   %br
   = link_to "#{I18n.t('users.comments')} (#{@user.comments.count})", user_comments_path(@user)
-
-%br   
-- if @user == current_user
-  = render 'edit_form'
+  
+%p
+  - if @user == current_user
+    %p
+      = render 'edit_form'
+  - else 
+    %p     
+      = @user.about

@@ -31,12 +31,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_back_or_default(root_path) 
+        format.html { 
           flash[:notice] = I18n.t('users_controller.messages.user_updated')
+          render :action => "show" 
         }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "show" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end

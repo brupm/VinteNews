@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_karma :posts
 
   validates :login,  :presence => true
-  validates :password, :presence => true
+  validates :password, :presence => true, :on => :create
 
   acts_as_authentic do |c|
     c.require_password_confirmation = false
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
   
   def admin?
-    login == "brupm" || login == "ibias" || login == "davis"
+    login == "brupm" || login == "ibias" || login == "daviscabral"
   end
 end
 
