@@ -129,7 +129,7 @@ pt_BR:
     about: Sobre
     login: Usuário
     register: Registrar
-    created: Criado
+    created: Membro desde
     karma: Karma
     login_count: Número de logins
     posts: Artigos
@@ -150,4 +150,4 @@ pt_BR:
     new_post: Nova notícia
     delete_confirmation: Tem certeza?    
   messages:
-    spammer: Oh no you didn't.
+    spammer: Sério? Sério?.
