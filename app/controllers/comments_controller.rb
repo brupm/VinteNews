@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     if params[:user_id]
       @comments = User.find_by_login(params[:user_id]).comments
     else
-      @comments = Comment.latest.sort_by{ |c| c.votes_for }.reverse
+      @comments = Comment.latest.top_level.sort_by{ |c| c.votes_for }.reverse
     end
   end
     
