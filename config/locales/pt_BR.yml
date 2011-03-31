@@ -67,7 +67,7 @@ pt_BR:
       login_not_found: não é valido
       password_blank: não pode estar vazio
       password_invalid: não é valido
-      no_authentication_details: Voce não preencheu a data, para autenticação
+      no_authentication_details: Você não preencheu a data, para autenticação
   application_controller:
     messages:
       must_be_logged_in: Você deve estar logado para ver essa página.
@@ -107,7 +107,7 @@ pt_BR:
     logout: Logout
     register: Registro
     about_this_site: Sobre este Site
-    comments: Commentários
+    comments: Comentários
   lists:
     lists: Listas
     popular_users: Usuários Populares
