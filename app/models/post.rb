@@ -10,9 +10,11 @@ class Post < ActiveRecord::Base
   validates :url, :presence => true, :if => Proc.new { |a| a.body.blank? }
   validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }  
 
+  after_create :vote_on_post
+
   default_scope where(:status => nil) 
-  
-  scope :popular, lambda { limit(20) }
+  #scope :popular, lambda { limit(20) }
+  scope :commented, joins(:comments).group("users.id") # Just reference :comments    
   scope :latest, order("posts.created_at DESC")
 
   def to_param
@@ -22,6 +24,10 @@ class Post < ActiveRecord::Base
   def mark_as_deleted
     self.status = "deleted"
     self.save
+  end
+  
+  def vote_on_post
+    user.vote_for(self)
   end
 end
 

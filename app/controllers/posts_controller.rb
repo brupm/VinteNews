@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     elsif params[:order] == "latest"
       @posts = Post.latest
     else
-      @posts = Post.popular.sort_by{ |p| p.votes_for }.reverse
+      @posts = Post.find_by_sql("select p.*, SUM(vote) as votes_count FROM votes v, posts p where p.id = v.`voteable_id` AND v.`voteable_type` = 'Post' group by v.voteable_id order by votes_count DESC limit 20").sort_by{ |p| p.votes_for }.reverse
     end
       
     respond_to do |format|
