@@ -25,7 +25,7 @@ class Comment < ActiveRecord::Base
   def votes_count
     votes = votes_for      
     if self.sub_comments.count > 0 
-      votes += self.sub_comments.map(&:votes_for).join.to_i
+      votes += eval(self.sub_comments.map(&:votes_for).join("+"))
     end
     
     #while       
