@@ -1,8 +1,8 @@
-- comment = comment.nil? ? @comment : comment 
-.comment    
+- comment = comment.nil? ? @comment : comment
+.comment{:id => "comment-#{comment.id}"}
   %span.arrow
     = link_to image_tag("arrow-blue.png"), vote_path(:comment_id => comment.id) unless current_user && current_user.voted_for?(comment)
-  .faded 
+  .faded
     = pluralize(comment.votes_count, I18n.t('posts.point'))
     = I18n.t('comments.submitted_by')
     = link_to comment.user.login, user_path(comment.user)
@@ -22,14 +22,14 @@
       |
       = link_to "Delete", comment_path(comment), :method => :delete, :confirm => I18n.t("comments.delete_confirmation")
 
-  %div.comment_body  
-    = comment.body  
+  %div.comment_body
+    = comment.body
     - if request.url != comment_url(comment)
       %div.reply_link
         = link_to I18n.t("comments.reply"), comment_path(comment)
     - else
       = render "comments/form"
-%br  
+%br
 
 %div.sub_comment
   = render :partial => "comments/comment", :collection => comment.sub_comments
