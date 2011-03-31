@@ -3,11 +3,19 @@ class CommentsController < ApplicationController
   before_filter :require_user, :except => [:show, :index]
   
   def index
-    if params[:user_id]
-      @comments = User.find_by_login(params[:user_id]).comments
-    else
-      @comments = Comment.latest.top_level.sort_by{ |c| c.votes_for }.reverse
+    respond_to do |format|      
+      if params[:user_id]
+        @comments = User.find_by_login(params[:user_id]).comments
+      else
+        @comments = Comment.latest.top_level.sort_by{ |c| c.votes_for }.reverse
+      end
+      format.html 
+      format.rss {
+        @comments = Comment.all
+      }
     end
+    
+    
   end
     
   def show  

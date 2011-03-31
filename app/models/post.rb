@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   after_create :vote_on_post
 
   default_scope where(:status => nil) 
-  scope :popular, lambda { limit(20) }
+  
   scope :commented, joins(:comments).group("users.id") # Just reference :comments    
   scope :latest, order("posts.created_at DESC")
 

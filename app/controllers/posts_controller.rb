@@ -6,9 +6,9 @@ class PostsController < ApplicationController
     if params[:user_id]
       @posts = User.find_by_login(params[:user_id]).posts
     elsif params[:order] == "latest"
-      @posts = Post.latest
+      @posts = Post.latest.pop(100)
     else
-      @posts = Post.popular.sort_by{ |p| p.votes_for }.reverse
+      @posts = Post.all.sort_by{ |p| p.votes_for }.pop(20).reverse
       #@posts = Post.find_by_sql("select p.*, SUM(vote) as votes_count FROM votes v, posts p where p.id = v.`voteable_id` AND v.`voteable_type` = 'Post' group by v.voteable_id order by votes_count DESC limit 20")
     end
       

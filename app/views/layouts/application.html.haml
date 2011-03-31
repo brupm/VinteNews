@@ -6,6 +6,7 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'jquery.min.js', 'rails.js', "date.extensions.js", "application.js"
     = csrf_meta_tag
+    = auto_discovery_link_tag(:rss, { :controller => "posts", :action => "index", :format => :rss })
     = render :partial => "layouts/analytics"
   %body
     #container
@@ -26,6 +27,8 @@
             = link_to "Twitter", "http://twitter.com/vintenews"
             |
             = link_to "RSS", posts_url(:format => :rss)
+            |
+            = link_to "#{I18n.t("layouts.comments")} RSS", comments_url(:format => :rss)
             | Bookmarklet:
             = link_to "+VinteNews", "javascript:location.href='http://#{request.host}/posts/new?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)"                        
             
