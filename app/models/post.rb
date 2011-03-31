@@ -6,9 +6,9 @@ class Post < ActiveRecord::Base
   has_karma :comments
 
   validates :title, :presence => true, :uniqueness => true
-  validates :url, :url_format => true
+  validates :url, :url_format => true, :if => Proc.new { |a| a.body.blank? }
   validates :url, :presence => true, :if => Proc.new { |a| a.body.blank? }
-  validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }
+  validates :body, :length => { :within => 20..10000 }, :allow_blank => true, :if => Proc.new { |a| a.url.blank? }  
 
   default_scope where(:status => nil) 
   

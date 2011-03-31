@@ -5,4 +5,9 @@ $(document).ready(function() {
     $(this).text(new Date(this.innerHTML).toRelativeTime());
   });
   
+  $("#post_body").change(function() {
+    $("#post_url").val("");
+  }); 
+  
+  
 });

@@ -1,4 +1,4 @@
 .comments
   %h2
     = I18n.t('posts.comments').capitalize
-  = render :partial => "comments/comment", :collection => @post.comments
+  = render :partial => "comments/comment", :collection => @post.comments.top_level

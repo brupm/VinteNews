@@ -1,12 +1,16 @@
-= form_for @comment, :url => post_comments_path(@post)  do |f|
-  
-  - if @comment.errors.any?
+- @post = @post.nil? ? @comment.post : @post
+- @this_comment = @comment.new_record? ? @comment : @sub_comment # handle sub_comments
+
+= form_for @this_comment, :url => post_comments_path(@post)  do |f|
+ 
+  - if @this_comment.errors.any?
     %ul
-      - @comment.errors.full_messages.each do |msg|
+      - @this_comment.errors.full_messages.each do |msg|
         %li= msg        
   %br   
   %div
     = f.text_area :body, {:cols => "90", :rows => "10"}
+    = f.hidden_field :parent_id, :value => @comment.id
   = render 'layouts/spammer_check'
   %div  
     = f.submit I18n.t('comments.add_comment'), :disable_with => t("common.button_disable_with")

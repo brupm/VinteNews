@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
   acts_as_voteable
     
   belongs_to :parent, :class_name => "Comment", :foreign_key => :parent_id
-  has_many :comments, :foreign_key => :parent_id
+  has_many :sub_comments, :class_name => "Comment", :foreign_key => :parent_id
   belongs_to :post
   belongs_to :user
   #has_karma :posts
@@ -12,13 +12,27 @@ class Comment < ActiveRecord::Base
   validates :body, :presence => true, :length => { :within => 2..10000 }
   
   default_scope where(:status => nil)
-     
+
+  scope :top_level, lambda {  where("comments.parent_id IS NULL") }
   scope :latest, order("created_at DESC")
   scope :popular, lambda { limit(20) }  
   
   def mark_as_deleted
     self.status = "deleted"
     self.save
+  end
+  
+  def votes_count
+    votes = votes_for      
+    if self.sub_comments.count > 0 
+      votes += self.sub_comments.map(&:votes_for).join.to_i
+    end
+    
+    #while       
+    #  votes + votes_count
+    #end
+    
+    votes
   end
   
 end

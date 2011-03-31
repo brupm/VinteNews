@@ -20,7 +20,10 @@ en:
               too_short: is too short
         post:
           attributes:
-              title:
+            body:
+              too_short: is too short              
+              blank: can't be empty
+            title:
               blank: can't be empty
               too_short: is too short  
   authlogic:
@@ -75,6 +78,7 @@ en:
     submitted_by: submitted by
     since: since
     link: link
+    reply: reply
     parent: parent 
     add_comment: Add comment
     comments: Comments

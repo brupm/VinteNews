@@ -48,6 +48,7 @@ class CommentsController < ApplicationController
       end
       if params[:id]
         @comment = Comment.find(params[:id])
+        @sub_comment = @comment.sub_comments.new
       else
         @comment = @post.comments.build(params[:comment])
         @comment.user = current_user

@@ -94,9 +94,11 @@ pre {
 .faded {
   color: #888888;
   margin-bottom: 3px;
-  font-size: 85%; }
+  font-size: 80%; }
   .faded a {
     color: #888888; }
+  .faded a:hover {
+    background: none; }
 
 .notice {
   color: white;
@@ -129,7 +131,20 @@ pre {
   margin-right: 2px;
   float: left; }
   .arrow a:hover {
-    background: none; }
+    background: none !important; }
 
 .post h3 {
   padding-left: 28px; }
+
+.comment_body {
+  padding-left: 13px;
+  font-size: 90%;
+  width: 70%; }
+  .comment_body .reply_link {
+    padding: 5px 0; }
+    .comment_body .reply_link a:hover {
+      background: none;
+      color: #666666; }
+
+.sub_comment {
+  padding-left: 30px; }
