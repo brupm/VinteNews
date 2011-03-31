@@ -24,7 +24,7 @@
 
   %div.comment_body  
     = comment.body  
-    - if request.url != comment_url
+    - if request.url != comment_url(comment)
       %div.reply_link
         = link_to I18n.t("comments.reply"), comment_path(comment)
     - else
