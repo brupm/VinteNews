@@ -23,6 +23,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     @user_session = UserSession.find
+    cookies.delete :user_credentials
     @user_session.destroy
     redirect_to login_path, :format => params[:format], :notice => I18n.t('user_sessions_controller.messages.logged_out')
   end
