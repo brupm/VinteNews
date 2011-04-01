@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CommentsController < ApplicationController
   before_filter :find_or_create_comment, :except => [:index, :destroy]
   before_filter :require_user, :except => [:show, :index]
@@ -7,11 +8,11 @@ class CommentsController < ApplicationController
       if params[:user_id]
         @comments = User.find_by_login(params[:user_id]).comments
       else
-        @comments = Comment.latest.top_level.sort_by{ |c| c.votes_for }.reverse
+        @comments = Comment.last_100
       end
       format.html 
       format.rss {
-        @comments = Comment.all
+        @comments = Comment.last_100
       }
     end
     

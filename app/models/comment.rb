@@ -15,7 +15,7 @@ class Comment < ActiveRecord::Base
 
   scope :top_level, lambda {  where("comments.parent_id IS NULL") }
   scope :latest, order("created_at DESC")
-  scope :popular, lambda { limit(20) }  
+  scope :last_100, order("created_at DESC").limit(100)
   
   def mark_as_deleted
     self.status = "deleted"

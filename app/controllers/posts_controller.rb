@@ -1,3 +1,4 @@
+# encoding: utf-8
 class PostsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
   before_filter :find_post, :only => [:show, :edit, :update, :destroy]
