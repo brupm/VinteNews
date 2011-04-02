@@ -7,13 +7,13 @@ describe Comment do
     comment = comments(:child_comment)
     comment.user.should_not be_nil
     comment.post.should_not be_nil 
-    comment.comments.should == []
+    comment.sub_comments.should == []
     comment.parent.should_not be_nil
   end
   
   it "should have parent associations" do      
     comment = comments(:url_comment)
-    comment.comments.should == [comments(:child_comment)]
+    comment.sub_comments.should == [comments(:child_comment)]
     comment.parent.should be_nil    
   end
   
