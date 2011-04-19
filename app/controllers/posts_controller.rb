@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:user_id]
       @posts = User.find_by_login(params[:user_id]).posts
     elsif params[:order] == "latest"
-      @posts = Post.latest.pop(50)
+      @posts = Post.latest.pop(20)
     else
       @posts = Post.less_than_7_days_old.sort_by{ |p| p.votes_for }.pop(20).reverse
       if @posts.count < 20        
