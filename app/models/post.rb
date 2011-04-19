@@ -16,7 +16,9 @@ class Post < ActiveRecord::Base
   
   scope :commented, joins(:comments).group("users.id") # Just reference :comments    
   scope :latest, order("posts.created_at DESC")
+  scope :less_than_7_days_old, lambda { where("posts.status IS NULL AND posts.created_at >= ?", Time.zone.now - 7.days)}
 
+  
   def to_param
     "#{id}-#{title.gsub(/[^a-z0-9]+/i, '-').downcase}"
   end

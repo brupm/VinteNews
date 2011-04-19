@@ -5,7 +5,7 @@ xml.rss :version => "2.0" do
     xml.description "O VinteNews recebe links da comunidade de programadores de língua Portuguesa."
     xml.link posts_url
 
-    for post in @posts
+    for post in Post.latest
       xml.item do
         xml.title post.title
         xml.body post.body unless post.body.nil?
