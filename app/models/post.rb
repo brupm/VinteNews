@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
   default_scope where(:status => nil) 
   
   scope :commented, joins(:comments).group("users.id") # Just reference :comments    
-  scope :latest, order("posts.created_at DESC")
+  scope :latest, order("posts.created_at DESC").limit(20)
   scope :less_than_7_days_old, lambda { where("posts.status IS NULL AND posts.created_at >= ?", Time.zone.now - 7.days)}
 
   

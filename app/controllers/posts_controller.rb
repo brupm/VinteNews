@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:user_id]
       @posts = User.find_by_login(params[:user_id]).posts
     elsif params[:order] == "latest"
-      @posts = Post.latest.pop(20)
+      @posts = Post.latest
     else
       @posts = Post.less_than_7_days_old.sort_by{ |p| p.votes_for }.pop(20).reverse
       if @posts.count < 20        
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
       @post = current_user.posts.create(params[:post])
       if @post.save
         flash[:notice] = I18n.t('posts_controller.messages.post_submitted')
-        redirect_to root_path
+        redirect_to post_path(@post)
       else
         render :action => 'new'
       end
