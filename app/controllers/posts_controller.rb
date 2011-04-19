@@ -9,11 +9,10 @@ class PostsController < ApplicationController
     elsif params[:order] == "latest"
       @posts = Post.latest.pop(50)
     else
-      @posts = Post.less_than_7_days_old
+      @posts = Post.less_than_7_days_old.sort_by{ |p| p.votes_for }.pop(20).reverse
       if @posts.count < 20        
         @posts += Post.latest.pop(20 - @posts.count)
       end
-      @posts = @posts.sort_by{ |p| p.votes_for }.pop(20).reverse
     end
       
     respond_to do |format|
