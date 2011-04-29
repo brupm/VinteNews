@@ -23,7 +23,8 @@
       = link_to "Delete", comment_path(comment), :method => :delete, :confirm => I18n.t("comments.delete_confirmation")
 
   %div.comment_body
-    = comment.body
+    = sanitize(line_break(comment.body), :tags => %w(ul li img strong br p b) )
+  
     - if request.url != comment_url(comment)
       %div.reply_link
         = link_to I18n.t("comments.reply"), comment_path(comment)

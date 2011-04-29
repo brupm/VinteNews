@@ -1,3 +1,6 @@
+= content_for :title do
+  = comment.post.title
+
 %h2
   = I18n.t('comments.comments')
 = render :partial => "comment"

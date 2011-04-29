@@ -1,3 +1,6 @@
+= content_for :title do
+  = @post.title
+  
 .post
   %span.arrow
     = link_to image_tag("arrow-blue.png"), vote_path(:post_id => @post.id) unless current_user && current_user.voted_for?(@post)
@@ -19,7 +22,7 @@
 
 - if @post.body
   %p
-    = @post.body
+    = sanitize(line_break(@post.body), :tags => %w(ul li img strong br p b) )
 
 = render "comments/form"
 

@@ -1,7 +1,8 @@
 !!! 5
 %html
   %head
-    %title VinteNews - Notícias para Hackers 
+    %title 
+      = (yield :title).blank? ? 'VinteNews - Notícias para Hackers' : (yield :title)
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8'}/
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'jquery.min.js', 'rails.js', "date.extensions.js", "application.js"
