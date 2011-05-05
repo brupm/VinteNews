@@ -1,3 +1,4 @@
-O VinteNews recebe links da comunidade de programadores de língua Portuguesa. A comunidade de usuários vota nos links. Se o link for votado rapidamente e/ou tiver muitos votos, aparece na capa. São 20 links na capa, que estão mudando sempre, devido aos votos dos usuários.
-
 v1.0
+=======
+Community based news aggregator for technology related news.
+Rails 3 application using steak and capybara. 
