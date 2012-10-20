@@ -1,23 +1,24 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.1.8'
 gem 'heroku'
 gem 'haml'
 gem 'sqlite3'
 gem 'mysql'
-gem 'hoptoad_notifier'
+#gem 'hoptoad_notifier'
 gem 'sass'
 gem 'autotest'
 gem 'authlogic'
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+gem 'thin'
 
-group :development do 
+group :development do
   gem 'annotate'
 end
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
-  gem 'sqlite3-ruby', :require => 'sqlite3'  
-  gem 'ruby-debug19', :require => 'ruby-debug'  
+  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'capybara'
 end
 
