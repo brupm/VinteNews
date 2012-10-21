@@ -177,7 +177,7 @@ DEPENDENCIES
   heroku
   mysql
   rails (= 3.1.8)
-  rspec-rails (~> 2.4)
+  rspec-rails
   sass
   sentry-raven!
   sqlite3

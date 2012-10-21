@@ -9,7 +9,7 @@ gem 'mysql'
 gem 'sass'
 gem 'autotest'
 gem 'authlogic'
-gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+gem 'sentry-raven', :git => 'https://github.com/getsentry/raven-ruby.git'
 gem 'thin'
 
 group :development do
@@ -17,7 +17,7 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.4"
+  gem "rspec-rails"
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'capybara'
 end
